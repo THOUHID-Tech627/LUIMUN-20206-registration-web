@@ -12,15 +12,17 @@ interface TimeLeft {
 }
 
 export const Countdown: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 81,
-    hours: 9,
-    minutes: 3,
-    seconds: 28,
+    days: 67,
+    hours: 10,
+    minutes: 36,
+    seconds: 0,
     isStarted: false,
   });
 
   useEffect(() => {
+    setMounted(true);
     const targetDate = new Date(SITE_CONFIG.conferenceDateIso).getTime();
 
     const calculateTime = () => {
@@ -64,11 +66,11 @@ export const Countdown: React.FC = () => {
 
   if (timeLeft.isStarted) {
     return (
-      <div className="rounded-xl bg-white/10 backdrop-blur-md border border-white/20 p-5 text-center">
+      <div className="rounded-xl bg-black/60 backdrop-blur-md border border-white/20 p-5 text-left">
         <span className="text-white font-bold text-base font-display">
           Conference Has Begun
         </span>
-        <p className="text-xs text-white/70 mt-1">16–17 December 2026 • Sylhet, Bangladesh</p>
+        <p className="text-xs text-neutral-400 mt-1">{SITE_CONFIG.dateDisplay} • Sylhet, Bangladesh</p>
       </div>
     );
   }
@@ -81,29 +83,29 @@ export const Countdown: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-md flex flex-col items-center lg:items-end">
-      {/* Top Label */}
-      <span className="text-xs sm:text-[13px] font-semibold tracking-wider text-white/80 uppercase mb-4 text-center lg:text-right">
-        COUNTING DOWN TO THE CONFERENCE
+    <div className="w-full max-w-md flex flex-col items-center sm:items-end text-center sm:text-right">
+      {/* Top: Date in White Bold matching background */}
+      <span className="text-sm sm:text-base font-bold text-white tracking-wide mb-3 text-center sm:text-right drop-shadow-sm">
+        {SITE_CONFIG.dateDisplay} • Sylhet, Bangladesh
       </span>
 
-      {/* 4 Countdown Boxes with colons */}
-      <div className="flex items-center justify-center gap-1.5 sm:gap-2.5">
+      {/* Middle: 4 Countdown Boxes with colons */}
+      <div className="flex items-center justify-center sm:justify-end gap-1.5 sm:gap-2.5">
         {units.map((unit, index) => (
           <React.Fragment key={unit.label}>
-            {/* Box */}
-            <div className="flex flex-col items-center justify-center rounded-xl bg-white/10 backdrop-blur-md border border-white/15 px-3 py-3 sm:px-4 sm:py-3.5 min-w-[62px] sm:min-w-[74px] shadow-lg">
+            {/* Box with frosted dark background for clear contrast over visible banner */}
+            <div className="flex flex-col items-center justify-center rounded-xl bg-black/60 backdrop-blur-md border border-white/20 px-3 py-3 sm:px-4 sm:py-3.5 min-w-[62px] sm:min-w-[74px] shadow-md">
               <span className="font-display font-extrabold text-2xl sm:text-3xl text-white tabular-nums leading-none">
                 {String(unit.value).padStart(2, "0")}
               </span>
-              <span className="mt-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white/75">
+              <span className="mt-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-neutral-400">
                 {unit.label}
               </span>
             </div>
 
             {/* Colon divider between boxes */}
             {index < units.length - 1 && (
-              <span className="text-lg sm:text-xl font-bold text-white/50 -mt-3 select-none">
+              <span className="text-lg sm:text-xl font-bold text-white/30 -mt-3 select-none">
                 :
               </span>
             )}
@@ -111,10 +113,10 @@ export const Countdown: React.FC = () => {
         ))}
       </div>
 
-      {/* Sub-label under countdown */}
-      <p className="mt-3.5 text-xs sm:text-[13px] text-white/75 font-medium text-center lg:text-right">
-        {SITE_CONFIG.dateDisplay} • Sylhet, Bangladesh
-      </p>
+      {/* Bottom: Countdown Label */}
+      <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-400 uppercase mt-3 text-center sm:text-right">
+        COUNTING DOWN TO THE CONFERENCE
+      </span>
     </div>
   );
 };

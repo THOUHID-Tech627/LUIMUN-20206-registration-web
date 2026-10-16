@@ -20,8 +20,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
   };
 
   return (
-    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-brand-deep">
-      {/* Background Image Layer */}
+    <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0A0A0A]">
+      {/* Background Image Layer: Grayscale monochrome diplomatic photography/artwork */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src={SITE_CONFIG.assets.heroBg}
@@ -29,72 +29,63 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
           fill
           priority
           quality={100}
-          className="object-cover object-center scale-100"
+          className="object-cover object-center grayscale contrast-125 brightness-105 opacity-80"
           sizes="100vw"
         />
 
-        {/* Sophisticated Reference Atmospheric Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/85" />
-        <div className="absolute inset-0 bg-radial-diplomatic opacity-40" />
+        {/* Directional contrast overlay: ensures left text readability while highlighting the banner emblem */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-black/25 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/75 pointer-events-none" />
       </div>
 
-      {/* Diplomatic UN Laurel / Seal Watermark on Background Left */}
-      <div className="pointer-events-none absolute -left-20 top-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-white/10 z-1 opacity-40" />
-      <div className="pointer-events-none absolute -left-10 top-1/2 -translate-y-1/2 w-[380px] h-[380px] rounded-full border border-dashed border-white/15 z-1 opacity-30" />
+      {/* Main Hero Container */}
+      <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col justify-between">
+        {/* Main Content Area (Left-shifted ~20% on desktop) */}
+        <div className="flex flex-col items-start text-left max-w-2xl lg:-translate-x-[14%] xl:-translate-x-[20%] transition-transform">
+          {/* Main Title with Strategic Contrast Box */}
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-white leading-[1.12]">
+            Where Diplomacy Meets{" "}
+            <span className="inline-block bg-white text-black px-3.5 py-0.5 rounded-xl font-black border border-neutral-300 shadow-sm align-middle">
+              Youth
+            </span>
+          </h1>
 
-      {/* Main 2-Column Split Hero Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Headline, Subheading, Narrative & Buttons */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
-            {/* Main Title with Highlight Box */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight text-white leading-[1.12]">
-              Where Diplomacy Meets{" "}
-              <span className="inline-block bg-[#0e78b8] px-3 py-0.5 rounded-lg text-white font-extrabold shadow-md border border-[#16A6F6]/40 align-middle">
-                Youth
-              </span>
-            </h1>
+          {/* Subheading - strictly the requested line */}
+          <h2 className="mt-5 text-xl sm:text-2xl lg:text-[26px] font-bold text-white/95 leading-snug max-w-xl">
+            Leading University International Model United Nation 2026
+          </h2>
 
-            {/* 3. Subheading / Theme Statement */}
-            <h2 className="mt-5 text-xl sm:text-2xl lg:text-[26px] font-bold text-white/95 leading-snug max-w-xl">
-              Leading University International Model United Nation 2026: Maximizing Youth Potential through Dialogue, Policy, and Sustainable Development
-            </h2>
+          {/* Button Group:
+              Buttons are white with black text on dark backgrounds!
+          */}
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <button
+              onClick={onOpenUpcoming}
+              className="group inline-flex items-center justify-center gap-2 rounded-xl px-7 py-3.5 text-sm sm:text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            >
+              <span>Apply Now</span>
+              <ArrowRight className="h-4 w-4 text-black transition-transform group-hover:translate-x-1" />
+            </button>
 
-            {/* 4. Narrative Paragraph */}
-            <p className="mt-4 text-sm sm:text-base text-white/80 leading-relaxed max-w-lg font-normal">
-              Leading University International Model United Nations 2026 brings young people together to research issues, debate ideas, negotiate solutions, and grow into thoughtful leaders.
-            </p>
-
-            {/* 5. Button Group */}
-            <div className="mt-8 flex flex-wrap items-center gap-3.5">
-              <button
-                onClick={onOpenUpcoming}
-                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-white px-7 py-3.5 text-sm sm:text-base font-bold text-[#06182C] shadow-lg hover:bg-white/95 active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-white"
-              >
-                <span>Apply Now</span>
-                <ArrowRight className="h-4 w-4 text-[#06182C] transition-transform group-hover:translate-x-1" />
-              </button>
-
-              <a
-                href="#about"
-                onClick={(e) => handleScrollToSection(e, "#about")}
-                className="inline-flex items-center justify-center rounded-xl bg-white/10 backdrop-blur-md px-6 py-3.5 text-sm sm:text-base font-semibold text-white border border-white/20 hover:bg-white/20 active:scale-95 transition-all"
-              >
-                Learn More
-              </a>
-            </div>
-
-            {/* 6. High-Credibility Subtext */}
-            <div className="mt-10 flex items-center gap-2 text-xs sm:text-sm text-white/70">
-              <ShieldCheck className="h-4 w-4 text-white/80 flex-shrink-0" />
-              <span>Organised by LUMUNA Secretariat • High-credibility youth diplomacy</span>
-            </div>
+            <a
+              href="#about"
+              onClick={(e) => handleScrollToSection(e, "#about")}
+              className="inline-flex items-center justify-center rounded-xl px-6 py-3.5 text-sm sm:text-base font-semibold bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-white/35 transition-all duration-200"
+            >
+              Learn More
+            </a>
           </div>
 
-          {/* Right Column: Countdown to Conference */}
-          <div className="lg:col-span-5 flex justify-start lg:justify-end items-center">
-            <Countdown />
+          {/* High-Credibility Subtext */}
+          <div className="mt-10 flex items-center gap-2 text-xs sm:text-sm text-neutral-400">
+            <ShieldCheck className="h-4 w-4 text-neutral-300 flex-shrink-0" />
+            <span>Organised by LUMUNA Secretariat • High-credibility youth diplomacy</span>
           </div>
+        </div>
+
+        {/* Right-Down Corner: Countdown to Conference */}
+        <div className="mt-12 lg:mt-0 lg:absolute lg:bottom-10 lg:right-8 xl:bottom-12 xl:right-14 z-20 flex justify-center lg:justify-end">
+          <Countdown />
         </div>
       </div>
     </section>

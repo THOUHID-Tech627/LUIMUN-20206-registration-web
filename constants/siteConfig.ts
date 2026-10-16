@@ -49,9 +49,9 @@ export const SITE_CONFIG = {
   themeSubtitle:
     "Fostering multilateral diplomacy and sustainable policy dialogues across evolving global challenges.",
   
-  // Key Dates & Logistics
-  conferenceDateIso: "2026-12-16T09:00:00+06:00",
-  dateDisplay: "16–17 December 2026",
+  // Key Dates & Logistics (Bangladesh Time GMT+6)
+  conferenceDateIso: "2026-12-23T09:00:00+06:00",
+  dateDisplay: "23–26 December 2026",
   venue: "Leading University",
   location: "Kamal Bazar, Sylhet",
   format: "In-Person Conference",
@@ -60,7 +60,7 @@ export const SITE_CONFIG = {
   // Asset Paths (Centralized for instant updates)
   assets: {
     logo: "/images/logo.png",
-    heroBg: "/images/hero-background.png",
+    heroBg: "/images/hero-background.jpg",
   },
 
   // Navigation Links

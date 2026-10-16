@@ -22,7 +22,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white text-brand-deep flex flex-col selection:bg-brand-blue/20 selection:text-brand-deep">
+    <div className="relative min-h-screen bg-white text-neutral-900 flex flex-col selection:bg-black selection:text-white">
       {/* 1. Sticky Frosted Navbar */}
       <Navbar onOpenUpcoming={handleOpenUpcoming} />
 

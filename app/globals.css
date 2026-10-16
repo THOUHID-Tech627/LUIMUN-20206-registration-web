@@ -3,16 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --brand-blue: #16A6F6;
-  --brand-blue-hover: #0e8fd6;
-  --brand-blue-light: #EBF7FE;
-  --brand-blue-soft: #F4FAFF;
-  --brand-blue-border: rgba(22, 166, 246, 0.22);
-  --brand-blue-glow: rgba(22, 166, 246, 0.12);
-  --brand-deep: #06182C;
-  --brand-navy: #0B2238;
-  --brand-slate: #3E5369;
-  --brand-white: #FFFFFF;
+  --color-black: #0A0A0A;
+  --color-dark: #171717;
+  --color-charcoal: #262626;
+  --color-slate: #525252;
+  --color-silver: #A3A3A3;
+  --color-border: #E5E5E5;
+  --color-surface: #F5F5F5;
+  --color-white: #FFFFFF;
 }
 
 html {
@@ -22,75 +20,176 @@ html {
 
 body {
   background-color: #FFFFFF;
-  color: var(--brand-deep);
+  color: #171717;
   font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle Geometric Diplomatic Patterns */
-.bg-grid-pattern {
-  background-size: 36px 36px;
+/* Restrained Geometric Diplomatic Pattern */
+.bg-grid-subtle {
+  background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(22, 166, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(22, 166, 246, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
 }
 
-.bg-radial-wreath {
-  background-image: radial-gradient(circle, rgba(22, 166, 246, 0.08) 0%, rgba(22, 166, 246, 0.02) 40%, transparent 70%);
+.bg-grid-subtle-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
-.diplomatic-border {
-  border: 1px solid rgba(22, 166, 246, 0.2);
-}
-
-.diplomatic-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(22, 166, 246, 0.18);
-  box-shadow: 0 4px 20px rgba(6, 24, 44, 0.04), 0 1px 3px rgba(22, 166, 246, 0.06);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.diplomatic-card:hover {
-  border-color: rgba(22, 166, 246, 0.45);
-  box-shadow: 0 16px 32px rgba(22, 166, 246, 0.12), 0 2px 6px rgba(6, 24, 44, 0.04);
-  transform: translateY(-3px);
+/* Floating Glass Navbar Glassmorphism */
+.floating-glass-navbar {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 /* Accessibility & Focus Rings */
 :focus-visible {
-  outline: 2px solid #16A6F6;
+  outline: 2px solid #000000;
   outline-offset: 2px;
 }
 
-/* Animation utilities */
-@keyframes pulseSubtle {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.03);
-  }
+/* ===================================================
+   MONOCHROME BUTTON SYSTEM
+   Rules:
+   - Black button with white text on light surfaces
+   - White button with black text on dark surfaces
+   - Restrained hover transitions & thin grey borders
+=================================================== */
+
+/* Primary Button (For Light Backgrounds): Black with white text */
+.btn-mono-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  border: 1px solid #0A0A0A;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
-.animate-pulse-subtle {
-  animation: pulseSubtle 4s ease-in-out infinite;
+.btn-mono-primary:hover {
+  background-color: #262626;
+  border-color: #262626;
+  transform: translateY(-1px);
 }
 
-@keyframes floatGentle {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+.btn-mono-primary:active {
+  transform: translateY(0);
 }
 
-.animate-float-gentle {
-  animation: floatGentle 6s ease-in-out infinite;
+/* Inverted Button (For Dark Backgrounds): White with black text */
+.btn-mono-inverted {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  color: #0A0A0A;
+  border: 1px solid #FFFFFF;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.btn-mono-inverted:hover {
+  background-color: #F5F5F5;
+  border-color: #F5F5F5;
+  color: #000000;
+  transform: translateY(-1px);
+}
+
+.btn-mono-inverted:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (For Light Backgrounds): White surface with thin grey border */
+.btn-mono-outline-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  color: #171717;
+  border: 1px solid #D4D4D4;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-mono-outline-light:hover {
+  background-color: #F5F5F5;
+  border-color: #A3A3A3;
+  color: #000000;
+  transform: translateY(-1px);
+}
+
+.btn-mono-outline-light:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (For Dark Backgrounds): Translucent dark with thin white border */
+.btn-mono-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-mono-outline-dark:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-mono-outline-dark:active {
+  transform: translateY(0);
+}
+
+/* Circular Icon Button */
+.btn-mono-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  color: #171717;
+  border: 1px solid #E5E5E5;
+  transition: all 0.2s ease;
+}
+
+.btn-mono-circle:hover {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  border-color: #0A0A0A;
+  transform: translateY(-1px);
+}
+
+/* Silver Gradient Accents */
+.silver-border-glow {
+  border: 1px solid rgba(212, 212, 212, 0.6);
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(245,245,245,0.6) 100%);
+}
+
+.silver-emblem-frame {
+  background: linear-gradient(135deg, #E5E5E5 0%, #FFFFFF 50%, #D4D4D4 100%);
+  border: 1px solid #D4D4D4;
 }
 
 @media (prefers-reduced-motion: reduce) {

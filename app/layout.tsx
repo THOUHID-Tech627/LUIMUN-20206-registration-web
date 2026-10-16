@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LUMUNA 2026 — Leading University International Model United Nation",
     description:
-      "Where Diplomacy Meets Youth. 16–17 December 2026 at Leading University, Kamal Bazar, Sylhet.",
+      "Where Diplomacy Meets Youth. 23–26 December 2026 at Leading University, Kamal Bazar, Sylhet.",
     type: "website",
     images: [
       {
@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
-      <body className="bg-white text-brand-deep antialiased min-h-screen selection:bg-brand-blue/20 selection:text-brand-deep">
+      <body className="bg-white text-neutral-900 antialiased min-h-screen selection:bg-black selection:text-white">
         {children}
       </body>
     </html>

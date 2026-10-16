@@ -58,65 +58,61 @@ export const UpcomingModal: React.FC<UpcomingModalProps> = ({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="fixed inset-0 bg-[#06182C]/70 backdrop-blur-sm transition-opacity duration-300 animate-in fade-in"
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-200 animate-in fade-in"
       />
 
-      {/* Modal Container */}
+      {/* Modal Container with Thin Grey Border */}
       <div
         ref={modalRef}
-        className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white border border-[#16A6F6]/30 shadow-2xl shadow-[#16A6F6]/20 transition-all duration-300 animate-in zoom-in-95 fade-in z-10"
+        className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white border border-neutral-200 shadow-2xl transition-all duration-200 animate-in zoom-in-95 fade-in z-10"
       >
-        {/* Top Decorative Geometric Header Bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-[#16A6F6] via-[#61c9ff] to-[#16A6F6]" />
-
-        {/* Ambient Radial Background Glow */}
-        <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[#16A6F6]/10 blur-2xl" />
-        <div className="pointer-events-none absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-[#16A6F6]/5 blur-2xl" />
+        {/* Subtle Silver Gradient Header Bar */}
+        <div className="h-1.5 w-full bg-gradient-to-r from-neutral-300 via-neutral-100 to-neutral-400" />
 
         {/* Close Button (Top Right) */}
         <button
           onClick={onClose}
           aria-label="Close dialog"
-          className="absolute right-4 top-4 rounded-full p-2 text-brand-slate hover:text-brand-deep hover:bg-brand-blue-light transition-colors focus:outline-none focus:ring-2 focus:ring-[#16A6F6]"
+          className="absolute right-4 top-4 rounded-full p-2 bg-neutral-100 border border-neutral-200 text-neutral-600 hover:text-black hover:bg-neutral-200 transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-400"
         >
-          <X className="h-5 w-5" />
+          <X className="h-4 w-4" />
         </button>
 
         {/* Modal Content */}
         <div className="p-8 sm:p-10 text-center flex flex-col items-center">
           {/* Circular Badge Icon */}
-          <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#EBF7FE] border-2 border-[#16A6F6]/40 shadow-inner">
-            <Clock className="h-8 w-8 text-[#16A6F6]" />
-            <div className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#16A6F6] text-white">
-              <Sparkles className="h-3.5 w-3.5" />
+          <div className="relative mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-neutral-100 border border-neutral-300 shadow-inner">
+            <Clock className="h-8 w-8 text-neutral-900" />
+            <div className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-black text-white border border-neutral-200">
+              <Sparkles className="h-3 w-3" />
             </div>
           </div>
 
-          {/* Heading */}
+          {/* Heading: High Contrast */}
           <h3
             id="upcoming-modal-title"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-[#16A6F6] font-display"
+            className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 font-display"
           >
             {title}
           </h3>
 
           {/* Subtitle */}
-          <p className="mt-3 text-sm sm:text-base font-medium text-brand-slate max-w-xs leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base font-normal text-neutral-700 max-w-xs leading-relaxed">
             {subtitle}
           </p>
 
           {/* Diplomatic Note */}
-          <div className="mt-6 flex items-center justify-center gap-2 rounded-full bg-brand-blue-light/60 px-4 py-1.5 text-xs text-brand-deep font-semibold border border-[#16A6F6]/20">
-            <Globe className="h-3.5 w-3.5 text-[#16A6F6]" />
+          <div className="mt-6 flex items-center justify-center gap-2 rounded-full bg-neutral-100 px-4 py-1.5 text-xs text-neutral-800 font-semibold border border-neutral-200">
+            <Globe className="h-3.5 w-3.5 text-neutral-600" />
             <span>LUMUNA 2026 Secretariat</span>
           </div>
 
-          {/* Action Button */}
+          {/* Action Button: Black with white text */}
           <div className="mt-8 w-full">
             <button
               ref={closeButtonRef}
               onClick={onClose}
-              className="w-full rounded-xl bg-[#16A6F6] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-[#16A6F6]/25 hover:bg-[#0e8fd6] active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-[#16A6F6] focus:ring-offset-2"
+              className="w-full rounded-xl px-6 py-3.5 text-sm font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400"
             >
               Close
             </button>
