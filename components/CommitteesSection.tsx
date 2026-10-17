@@ -73,8 +73,16 @@ export const CommitteesSection: React.FC<CommitteesSectionProps> = ({
   return (
     <section
       id="committees"
-      className="relative py-20 sm:py-28 bg-[#E5E7EB] scroll-mt-20 border-t border-neutral-300/60"
+      className="relative isolate overflow-hidden py-20 sm:py-28 bg-[#E5E7EB] scroll-mt-20 border-t border-neutral-300/60"
     >
+      <Image
+        src="/images/committees-background.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover object-center"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-white/25" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
