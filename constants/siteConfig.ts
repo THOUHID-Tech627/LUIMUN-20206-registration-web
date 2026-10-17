@@ -60,7 +60,7 @@ export const SITE_CONFIG = {
   // Asset Paths (Centralized for instant updates)
   assets: {
     logo: "/images/logo.png",
-    heroBg: "/images/hero-background.jpg",
+    heroBg: "/images/hero-lumuna-new.png",
   },
 
   // Navigation Links

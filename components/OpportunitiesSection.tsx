@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { BookOpen, GraduationCap, Gavel, ArrowUpRight } from "lucide-react";
 
 interface OpportunitiesProps {
@@ -38,26 +39,33 @@ export const OpportunitiesSection: React.FC<OpportunitiesProps> = ({
   ];
 
   return (
-    <section id="opportunities" className="relative py-20 sm:py-28 bg-[#F5F5F7] scroll-mt-24 sm:scroll-mt-28">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="opportunities" className="relative isolate overflow-hidden py-20 sm:py-28 bg-[#F5F5F7] scroll-mt-24 sm:scroll-mt-28">
+      <Image
+        src="/images/opportunities-background.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover object-center"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-white/35" />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Left-Aligned Editorial Header */}
-        <div className="text-left mb-12 sm:mb-14">
-          <span className="text-sm font-bold tracking-widest text-neutral-500 uppercase">
-            OPPORTUNITIES
-          </span>
+        <div data-reveal="up" className="text-left mb-12 sm:mb-14">
           <h2 className="mt-2.5 font-display text-3xl sm:text-5xl font-black text-neutral-900 tracking-tight">
-            Three Ways to Participate
+            Three Ways to <span className="inline-block bg-black px-1.5 text-white">Participate</span>
           </h2>
         </div>
 
         {/* 3 High-Contrast Cards with Thin Grey Borders */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          {items.map((item) => {
+          {items.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.id}
-                className="flex flex-col justify-between rounded-3xl bg-white border border-neutral-200/90 p-8 sm:p-10 lg:p-11 min-h-[380px] sm:min-h-[430px] hover:border-neutral-400 transition-all duration-200 shadow-2xs"
+                data-reveal="up"
+                data-reveal-delay={String(index + 1)}
+                className="relative z-0 flex flex-col justify-between rounded-3xl border border-white/70 bg-white/55 p-8 shadow-[0_12px_40px_rgba(17,24,39,0.14)] backdrop-blur-xl transition-all duration-300 ease-out hover:z-10 hover:scale-[1.03] hover:-translate-y-1 hover:border-white/90 hover:bg-white/65 sm:min-h-[430px] sm:p-10 lg:p-11 min-h-[380px]"
               >
                 <div>
                   {/* Icon Box */}

@@ -66,15 +66,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
 
   return (
     <nav
-      className="fixed top-[20px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl xl:max-w-5xl transition-all duration-300"
+      data-reveal="down"
+      className="fixed top-[8px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl xl:max-w-5xl transition-all duration-300"
       aria-label="Main Navigation"
     >
       {/* Floating Pill Glassmorphism Container */}
       <div
-        className={`floating-glass-navbar relative flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-full transition-all duration-300 ${
+        className={`floating-glass-navbar ${!isScrolled ? "floating-glass-navbar-dark" : ""} relative flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-full transition-all duration-300 ${
           isScrolled
-            ? "bg-white/90 border border-neutral-200/90 shadow-[0_14px_38px_rgba(0,0,0,0.16)]"
-            : "bg-white/75 border border-white/60 shadow-[0_10px_32px_rgba(0,0,0,0.12)]"
+            ? "bg-white/45 border border-white/55 shadow-[0_16px_42px_rgba(0,0,0,0.18)]"
+            : "bg-black/35 border border-white/25 shadow-[0_12px_36px_rgba(0,0,0,0.3)]"
         }`}
       >
         {/* Left: Logo Brand (LUIMUN 2026) */}
@@ -92,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
               sizes="(max-width: 640px) 36px, 40px"
             />
           </div>
-          <span className="font-display font-extrabold tracking-wider text-sm sm:text-base text-neutral-900 group-hover:text-black transition-colors whitespace-nowrap">
+          <span className={`font-display font-black tracking-wider text-base sm:text-lg transition-colors whitespace-nowrap ${isScrolled ? "text-neutral-900 group-hover:text-black" : "text-white group-hover:text-white/80"}`}>
             LUIMUN 2026
           </span>
         </Link>
@@ -107,10 +108,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.label, item.href)}
-                className={`relative px-3.5 py-1.5 text-xs sm:text-sm font-semibold rounded-full transition-all duration-200 ${
+                className={`relative px-3.5 py-1.5 text-sm md:text-base font-extrabold rounded-full transition-all duration-200 ${
                   isActive
-                    ? "text-black font-bold"
-                    : "text-neutral-700 hover:text-black hover:bg-black/5"
+                    ? `${isScrolled ? "text-black" : "text-white"} font-bold`
+                    : isScrolled
+                      ? "text-neutral-700 hover:text-black hover:bg-black/5"
+                      : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {/* Active Link Indicator (Amber accent bar matching reference) */}
@@ -128,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
           <a
             href="#opportunities"
             onClick={handleRegisterClick}
-            className="inline-flex items-center justify-center px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs active:scale-95 transition-all duration-200 whitespace-nowrap cursor-pointer"
+            className="inline-flex items-center justify-center px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs active:scale-95 transition-all duration-200 whitespace-nowrap cursor-pointer"
           >
             <span>Register Now</span>
           </a>
@@ -139,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
           <a
             href="#opportunities"
             onClick={handleRegisterClick}
-            className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs whitespace-nowrap cursor-pointer"
+            className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs whitespace-nowrap cursor-pointer"
           >
             Register Now
           </a>
@@ -156,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
 
       {/* Mobile Glass Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="floating-glass-navbar md:hidden mt-2.5 rounded-2xl bg-white/95 border border-white/70 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-4 animate-in slide-in-from-top-2 duration-200">
+        <div className="floating-glass-navbar md:hidden mt-2.5 rounded-2xl bg-white/25 border border-white/40 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-4 animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-2">
             {navLinks.map((item) => {
               const isActive = activeLink === item.label;

@@ -3,12 +3,11 @@
 import React, { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { ConferenceInfo } from "@/components/ConferenceInfo";
 import { AboutSection } from "@/components/AboutSection";
 import { OpportunitiesSection } from "@/components/OpportunitiesSection";
-import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { UpcomingModal } from "@/components/UpcomingModal";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function Home() {
   const [isUpcomingModalOpen, setIsUpcomingModalOpen] = useState(false);
@@ -23,6 +22,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-white text-neutral-900 flex flex-col selection:bg-black selection:text-white">
+      <ScrollReveal />
       {/* 1. Sticky Frosted Navbar */}
       <Navbar onOpenUpcoming={handleOpenUpcoming} />
 
@@ -30,17 +30,12 @@ export default function Home() {
         {/* 2. Hero Section with Background & Countdown */}
         <Hero onOpenUpcoming={handleOpenUpcoming} />
 
-        {/* 3. Conference Information Bar */}
-        <ConferenceInfo />
-
-        {/* 4. About Section */}
+        {/* About Section */}
         <AboutSection />
 
-        {/* 5. Participation Opportunities */}
+        {/* Participation Opportunities */}
         <OpportunitiesSection onOpenUpcoming={handleOpenUpcoming} />
 
-        {/* 6. Final High-Impact CTA */}
-        <CTASection onOpenUpcoming={handleOpenUpcoming} />
       </main>
 
       {/* 7. Institutional Footer */}

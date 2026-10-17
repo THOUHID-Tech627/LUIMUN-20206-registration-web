@@ -2,44 +2,31 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, Globe2, ShieldCheck, Award, Landmark, Users } from "lucide-react";
+import { ArrowRight, Globe2 } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 export const AboutSection: React.FC = () => {
-  const photoShowcase = [
-    {
-      title: "Multilateral Diplomacy",
-      subtitle: "Structured committee debate & global consensus",
-      image: "/images/photo-diplomacy.jpg",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Assembly Architecture",
-      subtitle: "International parliamentary standards & decorum",
-      image: "/images/photo-architecture.jpg",
-      icon: Landmark,
-    },
-    {
-      title: "Empowered Delegates",
-      subtitle: "Future diplomats negotiating sustainable policy",
-      image: "/images/photo-delegates.jpg",
-      icon: Users,
-    },
-  ];
-
   return (
     <section id="about" className="relative py-20 sm:py-28 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Image
+        src="/images/about-background.png"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover object-center"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-white/20" />
+      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-0 lg:pl-[15.5vw] lg:pr-[2vw]">
         {/* Main 2-Column Story Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
           {/* Left Column: Visual & Logo Identity Anchor with Silver Gradient */}
-          <div className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div data-reveal="left" className="lg:col-span-4 lg:mt-28 lg:-translate-x-10 lg:-translate-y-[10%] flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="relative">
               {/* Subtle Silver Gradient Emblem Frame */}
-              <div className="relative h-64 w-64 sm:h-80 sm:w-80 rounded-full bg-gradient-to-tr from-neutral-200 via-white to-neutral-300 border border-neutral-300 p-4 shadow-xs flex items-center justify-center">
+              <div className="relative h-[19.2rem] w-[19.2rem] sm:h-[24rem] sm:w-[24rem] rounded-full bg-gradient-to-tr from-neutral-200 via-white to-neutral-300 border border-neutral-300 p-4 shadow-xs flex items-center justify-center">
                 {/* Concentric diplomatic ring with silver accent */}
                 <div className="absolute inset-2 rounded-full border border-neutral-300/80" />
-                <div className="relative h-52 w-52 sm:h-64 sm:w-64 rounded-full overflow-hidden bg-black flex items-center justify-center">
+                <div className="relative h-[15.6rem] w-[15.6rem] sm:h-[19.2rem] sm:w-[19.2rem] rounded-full overflow-hidden bg-black flex items-center justify-center">
                   <Image
                     src={SITE_CONFIG.assets.logo}
                     alt="LUIMUN Official Seal"
@@ -53,7 +40,7 @@ export const AboutSection: React.FC = () => {
               {/* Decorative Pill Badge */}
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-auto sm:right-2 sm:translate-x-0 rounded-full bg-black px-4 py-1.5 text-xs font-bold text-white border border-neutral-800 shadow-xs flex items-center gap-1.5">
                 <Globe2 className="h-3.5 w-3.5 text-neutral-300" />
-                <span>Premier MUN of Sylhet</span>
+                <span>Premier MUN of Bangladesh</span>
               </div>
             </div>
 
@@ -87,52 +74,31 @@ export const AboutSection: React.FC = () => {
           </div>
 
           {/* Right Column: Editorial Text & Narrative */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-neutral-100 px-3.5 py-1 text-xs font-bold text-neutral-800 uppercase tracking-widest border border-neutral-300 shadow-2xs">
-              <span>About LUMUNA</span>
-            </div>
-
+          <div data-reveal="right" data-reveal-delay="1" className="lg:col-span-8 space-y-6">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-[1.15]">
               Where Young Voices Meet{" "}
-              <span className="underline decoration-neutral-300 decoration-2 underline-offset-8">
+              <span className="inline-block bg-black px-1.5 text-white">
                 Global Policy
               </span>
             </h2>
 
-            {/* Body text kept dark on white for high readability */}
-            <p className="text-base sm:text-lg text-neutral-900 leading-relaxed font-normal">
-              <strong>Leading University International Model United Nation (LUMUNA) 2026</strong> is the flagship multilateral conference organized at Leading University, Sylhet. Dedicated to cultivating the next generation of global diplomats, civil advocates, and visionary leaders, LUMUNA bridges academic theory with practical geopolitical statecraft.
-            </p>
-
-            <p className="text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
-              Through immersive committee simulations, delegates dissect complex international crises, engage in structured parliamentary debate, draft actionable resolutions, and negotiate consensus across diverse diplomatic viewpoints.
-            </p>
-
-            {/* Core Values Grid with Thin Grey Borders */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-neutral-50 border border-neutral-200 shadow-2xs">
-                <div className="p-2 rounded-lg bg-white text-neutral-900 border border-neutral-200">
-                  <ShieldCheck className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-neutral-900">Diplomatic Rigor</h4>
-                  <p className="text-xs text-neutral-700 mt-0.5 leading-relaxed">
-                    Adherence to UN parliamentary procedure and authentic policy simulation.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-neutral-50 border border-neutral-200 shadow-2xs">
-                <div className="p-2 rounded-lg bg-white text-neutral-900 border border-neutral-200">
-                  <Award className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-neutral-900">Youth Empowerment</h4>
-                  <p className="text-xs text-neutral-700 mt-0.5 leading-relaxed">
-                    Providing an international forum for students to influence future policy.
-                  </p>
-                </div>
-              </div>
+            <div className="space-y-4 text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
+              <p>
+                The Leading University Model United Nations Association (LUMUNA) proudly announces <strong>Leading University International Model United Nations 2026</strong>, returning to Sylhet for four days of debate, negotiation and discovery.
+              </p>
+              <p>
+                Since its founding in 2016, LUMUNA has grown into the foremost platform for youth diplomacy in Northeast Bangladesh, shaping young negotiators, writers and leaders one committee session at a time. This year marks ten years of that work, and LUIMUN 2026 stands as our 5th international edition, the furthest we have ever taken it.
+              </p>
+              <p>
+                <strong className="font-black text-neutral-950">LUIMUN 2026 convenes under the theme: “A World in Transition: Reimagining Global Cooperation, Advancing Human Progress, and Shaping Our Shared Future.”</strong>
+              </p>
+              <p>
+                In an increasingly multipolar world, shifting geopolitical alignments, rapid technological advancements, and widening disparities in development continue to reshape the international order. LUIMUN 2026 invites delegates to examine the complexities of multilateral cooperation, the tension between national sovereignty and collective responsibility, and the pursuit of equitable and sustainable global progress.
+              </p>
+              <p>
+                Through diplomatic dialogue, multilateral engagement, and constructive deliberation, LUIMUN 2026 seeks to foster a platform where delegates can navigate geopolitical uncertainties, reconcile competing national interests, and advance a more inclusive, peaceful, and cooperative international order.
+              </p>
+              <p><strong>Date:</strong> December 23 | 24 | 25 | 26, 2026 (4-day event)</p>
             </div>
 
             {/* Primary Action Button: Black button with white text on light surface */}
@@ -143,65 +109,26 @@ export const AboutSection: React.FC = () => {
                   e.preventDefault();
                   document.querySelector("#opportunities")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs transition-all duration-200 group"
+                className="group inline-flex min-h-[3.5rem] items-center gap-2 rounded-full border border-neutral-800 bg-gradient-to-b from-neutral-900 to-black py-1.5 pl-1.5 pr-1.5 text-xs font-bold text-white shadow-[0_12px_30px_rgba(0,0,0,0.28)] transition-all duration-200 hover:from-black hover:to-neutral-950 sm:min-h-[4.5rem] sm:gap-4 sm:py-2 sm:pl-2 sm:pr-2 sm:text-base"
               >
-                <span>Explore Participation Opportunities</span>
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-neutral-500/50 bg-[radial-gradient(circle_at_34%_28%,#f4f4f5_0%,#737373_24%,#262626_55%,#050505_78%)] shadow-[0_3px_12px_rgba(0,0,0,0.65)] sm:h-[4.5rem] sm:w-[4.5rem]">
+                  <Image
+                    src="/images/globe-icon.png"
+                    alt=""
+                    fill
+                    sizes="64px"
+                    className="scale-[1.3] rounded-full object-cover"
+                  />
+                </span>
+                <span className="whitespace-nowrap">Explore Participation Opportunities</span>
+                <span className="ml-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-black/70 sm:ml-1 sm:h-12 sm:w-12">
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 sm:h-6 sm:w-6" />
+                </span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Monochrome Photographs Showcase: Diplomacy, Architecture, Delegates */}
-        <div className="mt-20 pt-16 border-t border-neutral-200">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold text-neutral-500 uppercase tracking-widest">
-              Multilateral Excellence
-            </span>
-            <h3 className="mt-1.5 font-display text-2xl sm:text-3xl font-extrabold text-neutral-900 tracking-tight">
-              Diplomacy, Architecture & Delegation
-            </h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {photoShowcase.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={index}
-                  className="group relative rounded-2xl overflow-hidden border border-neutral-200 bg-white shadow-2xs hover:border-neutral-400 transition-all duration-300"
-                >
-                  {/* Photo container with strict monochrome styling */}
-                  <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-neutral-900">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-                    
-                    {/* Badge on Photo */}
-                    <div className="absolute top-4 left-4 p-2 rounded-lg bg-black/60 backdrop-blur-sm border border-white/20 text-white">
-                      <Icon className="h-4 w-4" />
-                    </div>
-
-                    {/* Bottom Caption Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h4 className="font-display font-bold text-lg text-white">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-neutral-300 mt-0.5 line-clamp-1 font-normal">
-                        {item.subtitle}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </section>
   );
