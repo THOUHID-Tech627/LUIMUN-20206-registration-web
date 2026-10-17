@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
             <ul className="space-y-3.5 text-sm sm:text-base font-semibold">
               <li>
                 <Link
-                  href="/About-us"
+                  href="/about-us"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   About LUMUNA
@@ -62,19 +62,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
               </li>
               <li>
                 <Link
-                  href="/About-us"
+                  href="/about-us"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   Theme & Vision
                 </Link>
               </li>
               <li>
-                <button
-                  onClick={onOpenUpcoming}
-                  className="text-white/80 hover:text-white transition-colors text-left"
+                <Link
+                  href="/committees"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   Committees
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

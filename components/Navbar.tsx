@@ -16,7 +16,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
   const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState(isHome ? "Home" : "About Us");
+  
+  const getActiveLink = () => {
+    if (pathname === "/about-us") return "About Us";
+    if (pathname === "/committees") return "Committees";
+    if (pathname === "/") return "Home";
+    return "";
+  };
+  const activeLink = getActiveLink();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,7 +43,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
     label: string,
     href: string
   ) => {
-    setActiveLink(label);
     setMobileMenuOpen(false);
 
     if (isHome) {
@@ -70,8 +76,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "About Us", href: "/About-us" },
-    { label: "Contact Us", href: "/#contact" },
+    { label: "About Us", href: "/about-us" },
+    { label: "Committees", href: "/committees" },
   ];
 
   const isLightNavbar = isScrolled || !isHome;

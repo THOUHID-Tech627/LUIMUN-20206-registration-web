@@ -67,7 +67,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
             </button>
 
             <Link
-              href="/About-us"
+              href="/about-us"
               className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-white/35 transition-all duration-200"
             >
               Learn More

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pressGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="accentGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2B150" />
+      <stop offset="100%" stop-color="#B8860B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Diplomatic Laurel Wreath -->
+  <g fill="none" stroke="#D69D36" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left Wreath Branch -->
+    <path d="M 250 440 C 130 430 70 340 70 240 C 70 160 120 90 220 60" />
+    <!-- Right Wreath Branch -->
+    <path d="M 250 440 C 370 430 430 340 430 240 C 430 160 380 90 280 60" />
+  </g>
+
+  <!-- Laurel Leaves (Left Side) -->
+  <g fill="#D69D36" opacity="0.95">
+    <!-- Leaves left -->
+    <path d="M 220 60 Q 200 45 180 55 Q 195 75 220 60 Z" />
+    <path d="M 185 75 Q 160 65 145 80 Q 165 95 185 75 Z" />
+    <path d="M 150 100 Q 120 95 110 115 Q 135 125 150 100 Z" />
+    <path d="M 120 135 Q 90 135 85 160 Q 110 165 120 135 Z" />
+    <path d="M 98 180 Q 70 185 70 210 Q 95 210 98 180 Z" />
+    <path d="M 85 230 Q 60 240 65 265 Q 90 260 85 230 Z" />
+    <path d="M 88 285 Q 65 300 75 325 Q 100 315 88 285 Z" />
+    <path d="M 105 340 Q 90 360 105 380 Q 125 365 105 340 Z" />
+    <path d="M 135 385 Q 125 410 150 425 Q 165 405 135 385 Z" />
+    <path d="M 180 420 Q 180 445 210 450 Q 215 430 180 420 Z" />
+    <path d="M 225 438 Q 235 458 250 455 Q 248 435 225 438 Z" />
+
+    <!-- Laurel Leaves (Right Side) -->
+    <path d="M 280 60 Q 300 45 320 55 Q 305 75 280 60 Z" />
+    <path d="M 315 75 Q 340 65 355 80 Q 335 95 315 75 Z" />
+    <path d="M 350 100 Q 380 95 390 115 Q 365 125 350 100 Z" />
+    <path d="M 380 135 Q 410 135 415 160 Q 390 165 380 135 Z" />
+    <path d="M 402 180 Q 430 185 430 210 Q 405 210 402 180 Z" />
+    <path d="M 415 230 Q 440 240 435 265 Q 410 260 415 230 Z" />
+    <path d="M 412 285 Q 435 300 425 325 Q 400 315 412 285 Z" />
+    <path d="M 395 340 Q 410 360 395 380 Q 375 365 395 340 Z" />
+    <path d="M 365 385 Q 375 410 350 425 Q 335 405 365 385 Z" />
+    <path d="M 320 420 Q 320 445 290 450 Q 285 430 320 420 Z" />
+    <path d="M 275 438 Q 265 458 250 455 Q 252 435 275 438 Z" />
+  </g>
+
+  <!-- Central Circular Globe / Grid Ring -->
+  <g fill="none" stroke="#D69D36" stroke-width="2.5" opacity="0.65">
+    <circle cx="250" cy="235" r="125" />
+    <circle cx="250" cy="235" r="95" stroke-dasharray="4 3" />
+    <ellipse cx="250" cy="235" rx="65" ry="125" />
+    <ellipse cx="250" cy="235" rx="125" ry="55" />
+    <line x1="125" y1="235" x2="375" y2="235" />
+    <line x1="250" y1="110" x2="250" y2="360" />
+  </g>
+
+  <!-- Central Heraldic Shield / Badge Background -->
+  <path d="M 195 155 L 305 155 Q 320 155 320 170 L 320 250 C 320 310 250 345 250 345 C 250 345 180 310 180 250 L 180 170 Q 180 155 195 155 Z" 
+        fill="url(#pressGrad)" stroke="#D69D36" stroke-width="4" />
+
+  <!-- Inner Inset Shield Outline -->
+  <path d="M 203 167 L 297 167 Q 308 167 308 178 L 308 245 C 308 295 250 328 250 328 C 250 328 192 295 192 245 L 192 178 Q 192 167 203 167 Z" 
+        fill="none" stroke="#E2B150" stroke-width="1.5" opacity="0.75" />
+
+  <!-- Crossed Elements inside Shield: Fountain Pen Nib & Broadcasting Microphone -->
+  <!-- Classic Fountain Pen Nib (Diagonal Left to Right) -->
+  <g fill="#D69D36">
+    <!-- Pen Nib Head -->
+    <path d="M 250 200 L 265 240 L 258 250 L 242 250 L 235 240 Z" fill="#E2B150" />
+    <!-- Nib Tip -->
+    <path d="M 250 185 L 256 202 L 244 202 Z" fill="#FFFFFF" />
+    <line x1="250" y1="188" x2="250" y2="225" stroke="#0F172A" stroke-width="2" />
+    <circle cx="250" cy="225" r="2.5" fill="#0F172A" />
+  </g>
+
+  <!-- Press Document / Quills / News Lines -->
+  <g stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9">
+    <line x1="222" y1="262" x2="278" y2="262" />
+    <line x1="228" y1="274" x2="272" y2="274" />
+    <line x1="234" y1="286" x2="266" y2="286" />
+    <line x1="242" y1="298" x2="258" y2="298" />
+  </g>
+
+  <!-- Bottom Ribbons & Official Inscription -->
+  <!-- Ribbon Base -->
+  <path d="M 140 405 L 200 395 L 250 408 L 300 395 L 360 405 L 345 425 L 300 415 L 250 428 L 200 415 L 155 425 Z" 
+        fill="#0F172A" stroke="#D69D36" stroke-width="2.5" />
+
+  <!-- Text "INTERNATIONAL PRESS" -->
+  <text x="250" y="420" 
+        text-anchor="middle" 
+        font-family="'Cinzel', 'Times New Roman', serif, system-ui" 
+        font-size="13" 
+        font-weight="bold" 
+        letter-spacing="3" 
+        fill="#FFFFFF">INTERNATIONAL PRESS</text>
+  
+  <!-- "IPC" Monogram at top of shield -->
+  <text x="250" y="142" 
+        text-anchor="middle" 
+        font-family="'Times New Roman', serif" 
+        font-size="16" 
+        font-weight="bold" 
+        letter-spacing="5" 
+        fill="#D69D36">LUIMUN • IPC</text>
+</svg>
+

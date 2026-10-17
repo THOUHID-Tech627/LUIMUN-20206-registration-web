@@ -96,7 +96,7 @@ export const AboutSection: React.FC = () => {
             {/* Primary Action Button: Black button with white text on light surface */}
             <div className="pt-4">
               <Link
-                href="/About-us"
+                href="/about-us"
                 className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm sm:text-base font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs transition-all duration-200"
               >
                 <span>Learn More</span>
