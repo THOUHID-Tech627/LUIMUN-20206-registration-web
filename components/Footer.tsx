@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
                   onClick={onOpenUpcoming}
                   className="text-white/80 hover:text-white transition-colors text-left"
                 >
-                  Executive Board
+                  International Delegate
                 </button>
               </li>
             </ul>

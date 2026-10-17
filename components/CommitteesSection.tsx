@@ -60,6 +60,16 @@ const COMMITTEES: CommitteeItem[] = [
 export const CommitteesSection: React.FC<CommitteesSectionProps> = ({
   onOpenUpcoming,
 }) => {
+  const handleScrollToOpportunities = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const target = document.querySelector("#opportunities");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    } else if (onOpenUpcoming) {
+      onOpenUpcoming();
+    }
+  };
+
   return (
     <section
       id="committees"
@@ -112,7 +122,7 @@ export const CommitteesSection: React.FC<CommitteesSectionProps> = ({
         {/* End of Section: Register Now Button */}
         <div data-reveal="up" className="mt-12 sm:mt-16 text-center">
           <button
-            onClick={onOpenUpcoming}
+            onClick={handleScrollToOpportunities}
             className="group inline-flex items-center justify-center gap-2 rounded-full px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs active:scale-95 transition-all duration-200 cursor-pointer"
           >
             <span>Register Now</span>
