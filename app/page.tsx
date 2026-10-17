@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { AboutSection } from "@/components/AboutSection";
+import { CommitteesSection } from "@/components/CommitteesSection";
 import { OpportunitiesSection } from "@/components/OpportunitiesSection";
 import { Footer } from "@/components/Footer";
 import { UpcomingModal } from "@/components/UpcomingModal";
@@ -32,6 +33,9 @@ export default function Home() {
 
         {/* About Section */}
         <AboutSection />
+
+        {/* Committees Section */}
+        <CommitteesSection onOpenUpcoming={handleOpenUpcoming} />
 
         {/* Participation Opportunities */}
         <OpportunitiesSection onOpenUpcoming={handleOpenUpcoming} />

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { Countdown } from "./Countdown";
@@ -21,12 +22,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0A0A0A]">
       {/* Background video and contrast overlays */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <iframe
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2"
-          src="https://www.youtube.com/embed/cKRQbFDwTUs?autoplay=1&mute=1&controls=0&loop=1&playlist=cKRQbFDwTUs&playsinline=1&rel=0"
-          title="LUMUNA 2026 hero background video"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-full min-h-[56.25vw] min-w-[177.78vh] -translate-x-1/2 -translate-y-1/2 border-0"
+          src="https://player.vimeo.com/video/1236837112?autoplay=1&muted=1&loop=1&background=1&controls=0&title=0&byline=0&portrait=0"
+          title="LUIMUN 2026 Background Video"
+          allow="autoplay; fullscreen; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
           tabIndex={-1}
           aria-hidden="true"
@@ -57,21 +58,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
               Buttons are white with black text on dark backgrounds!
           */}
           <div className="mt-10 flex flex-wrap items-center justify-start gap-3.5">
-            <button
-              onClick={onOpenUpcoming}
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            <a
+              href="#opportunities"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector("#opportunities");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 cursor-pointer"
             >
               <span>Apply Now</span>
               <ArrowRight className="h-4 w-4 text-black transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
 
-            <a
-              href="#about"
-              onClick={(e) => handleScrollToSection(e, "#about")}
+            <Link
+              href="/about-us"
               className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-white/35 transition-all duration-200"
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           {/* Organization Attribution */}
