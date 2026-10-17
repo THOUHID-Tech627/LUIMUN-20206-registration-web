@@ -21,12 +21,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0A0A0A]">
       {/* Background video and contrast overlays */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <iframe
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full -translate-x-1/2 -translate-y-1/2"
-          src="https://www.youtube.com/embed/cKRQbFDwTUs?autoplay=1&mute=1&controls=0&loop=1&playlist=cKRQbFDwTUs&playsinline=1&rel=0"
-          title="LUMUNA 2026 hero background video"
-          allow="autoplay; encrypted-media; picture-in-picture"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-full min-h-[56.25vw] min-w-[177.78vh] -translate-x-1/2 -translate-y-1/2 border-0"
+          src="https://player.vimeo.com/video/1236837112?autoplay=1&muted=1&loop=1&background=1&controls=0&title=0&byline=0&portrait=0"
+          title="LUIMUN 2026 Background Video"
+          allow="autoplay; fullscreen; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
           tabIndex={-1}
           aria-hidden="true"

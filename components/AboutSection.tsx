@@ -84,19 +84,10 @@ export const AboutSection: React.FC = () => {
 
             <div className="space-y-4 text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
               <p>
-                The Leading University Model United Nations Association (LUMUNA) proudly announces <strong>Leading University International Model United Nations 2026</strong>, returning to Sylhet for four days of debate, negotiation and discovery.
+                Founded in 2016, LUMUNA has spent a decade shaping the future of youth diplomacy in Northeast Bangladesh, empowering young negotiators, writers, and leaders. As we celebrate ten years of legacy, LUIMUN 2026 marks our <strong>5th international edition</strong> and our most ambitious chapter yet.
               </p>
               <p>
-                Since its founding in 2016, LUMUNA has grown into the foremost platform for youth diplomacy in Northeast Bangladesh, shaping young negotiators, writers and leaders one committee session at a time. This year marks ten years of that work, and LUIMUN 2026 stands as our 5th international edition, the furthest we have ever taken it.
-              </p>
-              <p>
-                <strong className="font-black text-neutral-950">LUIMUN 2026 convenes under the theme: “A World in Transition: Reimagining Global Cooperation, Advancing Human Progress, and Shaping Our Shared Future.”</strong>
-              </p>
-              <p>
-                In an increasingly multipolar world, shifting geopolitical alignments, rapid technological advancements, and widening disparities in development continue to reshape the international order. LUIMUN 2026 invites delegates to examine the complexities of multilateral cooperation, the tension between national sovereignty and collective responsibility, and the pursuit of equitable and sustainable global progress.
-              </p>
-              <p>
-                Through diplomatic dialogue, multilateral engagement, and constructive deliberation, LUIMUN 2026 seeks to foster a platform where delegates can navigate geopolitical uncertainties, reconcile competing national interests, and advance a more inclusive, peaceful, and cooperative international order.
+                Under the theme <strong>“A World in Transition: Reimagining Global Cooperation, Advancing Human Progress, and Shaping Our Shared Future,”</strong> LUIMUN 2026 brings together aspiring leaders to navigate global challenges, bridge competing interests, and envision a more inclusive, peaceful, and cooperative world.
               </p>
               <p><strong>Date:</strong> December 23 | 24 | 25 | 26, 2026 (4-day event)</p>
             </div>
