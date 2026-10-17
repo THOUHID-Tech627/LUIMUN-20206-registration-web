@@ -199,7 +199,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
 
       {/* Mobile Glass Dropdown Menu */}
       {mobileMenuOpen && (
-        <div className="floating-glass-navbar md:hidden mt-2.5 rounded-2xl bg-white/25 border border-white/40 shadow-[0_16px_40px_rgba(0,0,0,0.2)] p-4 animate-in slide-in-from-top-2 duration-200">
+        <div className="md:hidden mt-2.5 rounded-2xl bg-white/95 backdrop-blur-2xl border border-white/80 shadow-[0_20px_50px_rgba(0,0,0,0.2)] p-4 animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-2">
             {navLinks.map((item) => {
               const isActive = activeLink === item.label;
@@ -208,14 +208,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
                   key={item.label}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.label, item.href)}
-                  className={`px-3 py-2 text-sm font-semibold rounded-xl transition-colors flex items-center justify-between ${
+                  className={`px-3.5 py-2.5 text-sm font-bold rounded-xl transition-colors flex items-center justify-between ${
                     isActive
-                      ? "bg-neutral-100 text-black font-bold"
-                      : "text-neutral-800 hover:bg-neutral-100/80 hover:text-black"
+                      ? "bg-neutral-900 text-white font-bold shadow-xs"
+                      : "text-neutral-900 hover:bg-neutral-100/90"
                   }`}
                 >
                   <span>{item.label}</span>
-                  {isActive && <span className="h-1.5 w-1.5 rounded-full bg-neutral-900" />}
+                  {isActive && <span className="h-2 w-2 rounded-full bg-white" />}
                 </Link>
               );
             })}

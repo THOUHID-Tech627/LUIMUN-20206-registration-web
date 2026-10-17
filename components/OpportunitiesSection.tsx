@@ -3,14 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { BookOpen, GraduationCap, Globe, ArrowUpRight } from "lucide-react";
+import { SITE_CONFIG } from "@/constants/siteConfig";
 
 interface OpportunitiesProps {
-  onOpenUpcoming: () => void;
+  onOpenUpcoming?: () => void;
 }
 
-export const OpportunitiesSection: React.FC<OpportunitiesProps> = ({
-  onOpenUpcoming,
-}) => {
+export const OpportunitiesSection: React.FC<OpportunitiesProps> = () => {
   const items = [
     {
       id: "delegate-registration",
@@ -19,14 +18,16 @@ export const OpportunitiesSection: React.FC<OpportunitiesProps> = ({
         "Represent a sovereign nation or portfolio in one of our 8 committees, debate critical global agendas, and negotiate multilateral consensus. Apply as an individual delegate.",
       buttonText: "Apply as Delegate",
       icon: BookOpen,
+      href: SITE_CONFIG.socials.registration.delegate,
     },
     {
-      id: "campus-ambassador",
-      title: "Campus Ambassador",
+      id: "head-of-delegation",
+      title: "Head of Delegation",
       description:
-        "Serve as the official institutional liaison for LUIMUN 2026, mobilize student delegations, and champion diplomatic leadership on your campus.",
-      buttonText: "Apply as CA",
+        "Register and lead an institutional delegation from your university, college, or school. Coordinate delegate assignments, team credentials, and institutional representation.",
+      buttonText: "Apply as Head of Delegation",
       icon: GraduationCap,
+      href: SITE_CONFIG.socials.registration.headOfDelegation,
     },
     {
       id: "international-delegate",
@@ -35,6 +36,7 @@ export const OpportunitiesSection: React.FC<OpportunitiesProps> = ({
         "Dedicated registration channel for international participants, including official visa assistance letters and priority delegate liaison support.",
       buttonText: "Apply as Int'l Delegate",
       icon: Globe,
+      href: SITE_CONFIG.socials.registration.internationalDelegate,
     },
   ];
 
@@ -88,15 +90,17 @@ export const OpportunitiesSection: React.FC<OpportunitiesProps> = ({
                   </p>
                 </div>
 
-                {/* Bottom Button */}
+                {/* Bottom Button linking to official Fillout form */}
                 <div className="mt-10 pt-2">
-                  <button
-                    onClick={onOpenUpcoming}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-5 text-sm sm:text-base font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs transition-all duration-200 group active:scale-95 cursor-pointer"
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl py-3.5 px-5 text-sm sm:text-base font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs transition-all duration-200 group active:scale-95"
                   >
                     <span>{item.buttonText}</span>
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </button>
+                  </a>
                 </div>
               </div>
             );

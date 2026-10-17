@@ -58,13 +58,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
               Buttons are white with black text on dark backgrounds!
           */}
           <div className="mt-10 flex flex-wrap items-center justify-start gap-3.5">
-            <button
-              onClick={onOpenUpcoming}
-              className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+            <a
+              href="#opportunities"
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.querySelector("#opportunities");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-full px-10 py-4 text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 cursor-pointer"
             >
               <span>Apply Now</span>
               <ArrowRight className="h-4 w-4 text-black transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
 
             <Link
               href="/about-us"

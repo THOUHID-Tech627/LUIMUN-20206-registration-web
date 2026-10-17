@@ -71,12 +71,16 @@ export const SITE_CONFIG = {
     { label: "Contact", href: "#contact" },
   ] as NavItem[],
 
-  // Social Links
+  // Social & Official Links
   socials: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
-    linkedin: "https://linkedin.com",
-    email: "contact@lumuna.org",
+    facebook: "https://www.facebook.com/LUMUNA.SYLHET",
+    eventPage: "https://www.facebook.com/share/1D8R5dnosW/",
+    email: "da.luimun2026@gmail.com",
+    registration: {
+      delegate: "https://luimun2026.fillout.com/t/qrbfBNdKwUus",
+      headOfDelegation: "https://luimun2026.fillout.com/t/5jDj79vVzbus",
+      internationalDelegate: "https://luimun2026.fillout.com/t/3qjU3Fhfrhus",
+    },
   },
 
   // Core Principles

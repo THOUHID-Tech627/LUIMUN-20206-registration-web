@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Instagram, Mail } from "lucide-react";
+import { Facebook, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 interface FooterProps {
@@ -86,28 +86,34 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
             </h4>
             <ul className="space-y-3.5 text-sm sm:text-base font-semibold">
               <li>
-                <button
-                  onClick={onOpenUpcoming}
-                  className="text-white/80 hover:text-white transition-colors text-left"
+                <a
+                  href={SITE_CONFIG.socials.registration.delegate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
                 >
-                  Delegate Application
-                </button>
+                  Delegate Registration
+                </a>
               </li>
               <li>
-                <button
-                  onClick={onOpenUpcoming}
-                  className="text-white/80 hover:text-white transition-colors text-left"
+                <a
+                  href={SITE_CONFIG.socials.registration.headOfDelegation}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
                 >
-                  Campus Ambassador
-                </button>
+                  Head of Delegation
+                </a>
               </li>
               <li>
-                <button
-                  onClick={onOpenUpcoming}
-                  className="text-white/80 hover:text-white transition-colors text-left"
+                <a
+                  href={SITE_CONFIG.socials.registration.internationalDelegate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   International Delegate
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -143,11 +149,34 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
               CONTACT US
             </h4>
             <ul className="space-y-3.5 text-sm sm:text-base font-semibold">
-              <li><a href={SITE_CONFIG.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors inline-block">Event Page</a></li>
-              <li><a href={SITE_CONFIG.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors inline-block">Facebook</a></li>
-              <li><a href={SITE_CONFIG.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors inline-block">Instagram</a></li>
-              <li><a href={`mailto:${SITE_CONFIG.socials.email}`} className="text-white/80 hover:text-white transition-colors inline-block">E-mail</a></li>
-              <li><a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-white transition-colors inline-block">WhatsApp</a></li>
+              <li>
+                <a
+                  href={SITE_CONFIG.socials.eventPage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
+                >
+                  Event Page
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE_CONFIG.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
+                >
+                  Club Page
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${SITE_CONFIG.socials.email}`}
+                  className="text-white/80 hover:text-white transition-colors inline-block break-all"
+                >
+                  {SITE_CONFIG.socials.email}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -160,25 +189,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
 
           {/* Social Icons */}
           <div className="flex items-center gap-6">
-            {/* Social Icons with Thin Grey Border */}
             <div className="flex items-center gap-2.5">
               <a
                 href={SITE_CONFIG.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label="Club Page"
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white border border-white/20 hover:bg-white hover:text-black hover:border-white transition-all duration-200 shadow-2xs"
               >
                 <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href={SITE_CONFIG.socials.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white border border-white/20 hover:bg-white hover:text-black hover:border-white transition-all duration-200 shadow-2xs"
-              >
-                <Instagram className="h-4 w-4" />
               </a>
               <a
                 href={`mailto:${SITE_CONFIG.socials.email}`}
