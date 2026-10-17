@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
               </li>
               <li>
                 <Link
-                  href="/committees"
+                  href="/#committees"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   Committees

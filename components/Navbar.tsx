@@ -14,16 +14,17 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const [activeLink, setActiveLink] = useState(isHome ? "Home" : "About Us");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
-  const getActiveLink = () => {
-    if (pathname === "/about-us") return "About Us";
-    if (pathname === "/committees") return "Committees";
-    if (pathname === "/") return "Home";
-    return "";
-  };
-  const activeLink = getActiveLink();
+
+  useEffect(() => {
+    if (pathname === "/about-us") {
+      setActiveLink("About Us");
+    } else if (pathname === "/") {
+      setActiveLink("Home");
+    }
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,17 +33,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
       } else {
         setIsScrolled(false);
       }
+
+      if (isHome) {
+        const commEl = document.querySelector("#committees");
+        if (commEl) {
+          const rect = commEl.getBoundingClientRect();
+          if (rect.top <= 160 && rect.bottom >= 160) {
+            setActiveLink("Committees");
+            return;
+          }
+        }
+        if (window.scrollY < 400) {
+          setActiveLink("Home");
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
     label: string,
     href: string
   ) => {
+    setActiveLink(label);
     setMobileMenuOpen(false);
 
     if (isHome) {
@@ -77,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about-us" },
-    { label: "Committees", href: "/committees" },
+    { label: "Committees", href: "/#committees" },
   ];
 
   const isLightNavbar = isScrolled || !isHome;
