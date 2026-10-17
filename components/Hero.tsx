@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 import { Countdown } from "./Countdown";
@@ -65,13 +66,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
               <ArrowRight className="h-4 w-4 text-black transition-transform group-hover:translate-x-1" />
             </button>
 
-            <a
-              href="#about"
-              onClick={(e) => handleScrollToSection(e, "#about")}
+            <Link
+              href="/About-us"
               className="inline-flex items-center justify-center rounded-full px-8 py-4 text-base font-semibold bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-white/35 transition-all duration-200"
             >
               Learn More
-            </a>
+            </Link>
           </div>
 
           {/* Organization Attribution */}

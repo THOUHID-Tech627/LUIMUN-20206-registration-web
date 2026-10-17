@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Globe2 } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
@@ -18,9 +19,9 @@ export const AboutSection: React.FC = () => {
       <div className="pointer-events-none absolute inset-0 bg-white/20" />
       <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-0 lg:pl-[15.5vw] lg:pr-[2vw]">
         {/* Main 2-Column Story Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Left Column: Visual & Logo Identity Anchor with Silver Gradient */}
-          <div data-reveal="left" className="lg:col-span-4 lg:mt-28 lg:-translate-x-10 lg:-translate-y-[10%] flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div data-reveal="left" className="lg:col-span-4 lg:-translate-x-10 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="relative">
               {/* Subtle Silver Gradient Emblem Frame */}
               <div className="relative h-[19.2rem] w-[19.2rem] sm:h-[24rem] sm:w-[24rem] rounded-full bg-gradient-to-tr from-neutral-200 via-white to-neutral-300 border border-neutral-300 p-4 shadow-xs flex items-center justify-center">
@@ -94,28 +95,13 @@ export const AboutSection: React.FC = () => {
 
             {/* Primary Action Button: Black button with white text on light surface */}
             <div className="pt-4">
-              <a
-                href="#opportunities"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector("#opportunities")?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="group inline-flex min-h-[3.5rem] items-center gap-2 rounded-full border border-neutral-800 bg-gradient-to-b from-neutral-900 to-black py-1.5 pl-1.5 pr-1.5 text-xs font-bold text-white shadow-[0_12px_30px_rgba(0,0,0,0.28)] transition-all duration-200 hover:from-black hover:to-neutral-950 sm:min-h-[4.5rem] sm:gap-4 sm:py-2 sm:pl-2 sm:pr-2 sm:text-base"
+              <Link
+                href="/About-us"
+                className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm sm:text-base font-bold bg-black text-white hover:bg-neutral-800 border border-black shadow-xs transition-all duration-200"
               >
-                <span className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full border border-neutral-500/50 bg-[radial-gradient(circle_at_34%_28%,#f4f4f5_0%,#737373_24%,#262626_55%,#050505_78%)] shadow-[0_3px_12px_rgba(0,0,0,0.65)] sm:h-[4.5rem] sm:w-[4.5rem]">
-                  <Image
-                    src="/images/globe-icon.png"
-                    alt=""
-                    fill
-                    sizes="64px"
-                    className="scale-[1.3] rounded-full object-cover"
-                  />
-                </span>
-                <span className="whitespace-nowrap">Explore Participation Opportunities</span>
-                <span className="ml-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-black/70 sm:ml-1 sm:h-12 sm:w-12">
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1 sm:h-6 sm:w-6" />
-                </span>
-              </a>
+                <span>Learn More</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
         </div>

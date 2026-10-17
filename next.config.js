@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/about-us",
+        destination: "/About-us",
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

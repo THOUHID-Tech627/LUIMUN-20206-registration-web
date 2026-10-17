@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Facebook, Instagram, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
@@ -22,14 +23,25 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
 
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-white/15 bg-neutral-950 pt-20 pb-14 text-neutral-100 sm:pt-24">
+      {/* PC Background Image & Contrast Overlay */}
       <Image
         src="/images/footer-background.png"
         alt=""
         fill
         sizes="100vw"
-        className="pointer-events-none object-cover object-center"
+        className="pointer-events-none hidden md:block object-cover object-center"
       />
-      <div className="pointer-events-none absolute inset-0 bg-black/35" />
+      <div className="pointer-events-none absolute inset-0 bg-black/35 hidden md:block" />
+
+      {/* Mobile-only Military style responsive Bolder background text */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center overflow-hidden md:hidden select-none"
+        aria-hidden="true"
+      >
+        <span className="font-display font-black uppercase tracking-[0.16em] text-[13vw] sm:text-[10vw] leading-none text-white/[0.12] text-center whitespace-nowrap">
+          LUIMUN 2026
+        </span>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 w-full">
         {/* Four footer columns, balanced across screen sizes */}
@@ -41,22 +53,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
             </h4>
             <ul className="space-y-3.5 text-sm sm:text-base font-semibold">
               <li>
-                <a
-                  href="#about"
-                  onClick={(e) => handleNavClick(e, "#about")}
+                <Link
+                  href="/About-us"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   About LUMUNA
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#about"
-                  onClick={(e) => handleNavClick(e, "#about")}
+                <Link
+                  href="/About-us"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   Theme & Vision
-                </a>
+                </Link>
               </li>
               <li>
                 <button
