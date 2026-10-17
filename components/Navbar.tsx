@@ -116,9 +116,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
                       : "text-white/80 hover:text-white hover:bg-white/10"
                 }`}
               >
-                {/* Active Link Indicator (Amber accent bar matching reference) */}
+                {/* Active Link Indicator (Monochrome accent bar matching theme) */}
                 {isActive && (
-                  <span className="absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-[2.5px] rounded-full bg-amber-500 transition-all duration-200" />
+                  <span className={`absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-[2.5px] rounded-full transition-all duration-200 ${isScrolled ? "bg-neutral-900" : "bg-white"}`} />
                 )}
                 <span>{item.label}</span>
               </a>
@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
                   }`}
                 >
                   <span>{item.label}</span>
-                  {isActive && <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />}
+                  {isActive && <span className="h-1.5 w-1.5 rounded-full bg-neutral-900" />}
                 </a>
               );
             })}

@@ -14,9 +14,9 @@ interface TimeLeft {
 export const Countdown: React.FC = () => {
   const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 67,
-    hours: 10,
-    minutes: 36,
+    days: 0,
+    hours: 0,
+    minutes: 0,
     seconds: 0,
     isStarted: false,
   });
@@ -29,7 +29,7 @@ export const Countdown: React.FC = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
 
-      if (difference <= 0) {
+      if (isNaN(difference) || difference <= 0) {
         setTimeLeft({
           days: 0,
           hours: 0,
@@ -63,6 +63,35 @@ export const Countdown: React.FC = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (!mounted) {
+    return (
+      <div className="w-full max-w-md flex flex-col items-start text-left">
+        <span className="text-base sm:text-lg font-bold text-white tracking-wide mb-3 text-left drop-shadow-sm">
+          {SITE_CONFIG.dateDisplay} • Sylhet, Bangladesh
+        </span>
+        <div className="flex items-center justify-start gap-1.5 sm:gap-2.5">
+          {["DAYS", "HOURS", "MINUTES", "SECONDS"].map((label, index) => (
+            <React.Fragment key={label}>
+              <div className="flex flex-col items-center justify-center rounded-xl bg-black/75 backdrop-blur-md border border-white/20 px-3 py-3 sm:px-5 sm:py-4 min-w-[72px] sm:min-w-[96px] shadow-md">
+                <span className="font-display font-extrabold text-2xl sm:text-3xl text-white tabular-nums leading-none">
+                  --
+                </span>
+                <span className="mt-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+                  {label}
+                </span>
+              </div>
+              {index < 3 && (
+                <span className="text-lg sm:text-xl font-bold text-white/30 -mt-3 select-none">
+                  :
+                </span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   if (timeLeft.isStarted) {
     return (

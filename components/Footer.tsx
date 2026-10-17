@@ -51,8 +51,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
               </li>
               <li>
                 <a
-                  href="#conference-info"
-                  onClick={(e) => handleNavClick(e, "#conference-info")}
+                  href="#about"
+                  onClick={(e) => handleNavClick(e, "#about")}
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   Theme & Vision
