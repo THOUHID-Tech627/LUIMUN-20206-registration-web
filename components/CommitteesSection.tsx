@@ -23,7 +23,7 @@ const COMMITTEES: CommitteeItem[] = [
   {
     name: "ICJ",
     fullName: "International Court of Justice",
-    logo: "/images/committees/icj.svg",
+    logo: "/images/committees/icj.png",
   },
   {
     name: "IP",
@@ -33,7 +33,7 @@ const COMMITTEES: CommitteeItem[] = [
   {
     name: "UNHRC",
     fullName: "United Nations Human Rights Council",
-    logo: "/images/committees/unhrc.svg",
+    logo: "/images/committees/unhrc.png",
   },
   {
     name: "ILO",
@@ -48,12 +48,12 @@ const COMMITTEES: CommitteeItem[] = [
   {
     name: "UNDP",
     fullName: "United Nations Development Programme",
-    logo: "/images/committees/undp.svg",
+    logo: "/images/committees/undp.png",
   },
   {
     name: "WTO",
     fullName: "World Trade Organization",
-    logo: "/images/committees/wto.svg",
+    logo: "/images/committees/wto.png",
   },
 ];
 
@@ -114,6 +114,35 @@ export const CommitteesSection: React.FC<CommitteesSectionProps> = ({
                 <p className="mt-1 text-xs sm:text-sm font-semibold text-neutral-600 leading-snug line-clamp-2">
                   {comm.fullName}
                 </p>
+              </div>
+            </div>
+          ))}
+
+          {/* 2 Surprise Committees: Centered on desktop via md:col-start-2 */}
+          {[1, 2].map((num, idx) => (
+            <div
+              key={`surprise-${num}`}
+              data-reveal="up"
+              className={`group relative flex flex-col items-center justify-between p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 min-h-[220px] sm:min-h-[250px] ${
+                idx === 0 ? "md:col-start-2" : ""
+              }`}
+            >
+              {/* Question Mark Logo Box */}
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center my-auto transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/images/committees/surprise.svg"
+                  alt="Surprise Committee Logo"
+                  fill
+                  className="object-contain p-1"
+                  sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+                />
+              </div>
+
+              {/* Committee Name Below the Logo */}
+              <div className="mt-4 sm:mt-5 text-center w-full pt-3 border-t border-neutral-100 flex items-center justify-center min-h-[52px]">
+                <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-neutral-900 tracking-tight">
+                  Surprise Committee
+                </h3>
               </div>
             </div>
           ))}

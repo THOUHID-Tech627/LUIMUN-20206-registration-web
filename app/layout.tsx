@@ -31,8 +31,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Leading University MUN Secretariat" }],
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: [
+      { url: "/images/logo-nobg.png", type: "image/png" },
+    ],
+    shortcut: "/images/logo-nobg.png",
+    apple: "/images/logo-nobg.png",
   },
   openGraph: {
     title: "LUMUNA 2026 — Leading University International Model United Nation",
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/logo-nobg.png",
         width: 800,
         height: 800,
         alt: "LUMUNA 2026 Official Seal",

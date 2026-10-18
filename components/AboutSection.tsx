@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
               </div>
               <div className="text-center border-x border-neutral-200 px-2">
                 <div className="font-display text-2xl sm:text-3xl font-extrabold text-neutral-900">
-                  8+
+                  10
                 </div>
                 <div className="text-[11px] font-bold text-neutral-500 uppercase mt-0.5">
                   Committees

@@ -15,7 +15,7 @@ export const OpportunitiesSection: React.FC<OpportunitiesProps> = () => {
       id: "delegate-registration",
       title: "Delegate Registration",
       description:
-        "Represent a sovereign nation or portfolio in one of our 8 committees, debate critical global agendas, and negotiate multilateral consensus. Apply as an individual delegate.",
+        "Represent a sovereign nation or portfolio in one of our 10 committees, debate critical global agendas, and negotiate multilateral consensus. Apply as an individual delegate.",
       buttonText: "Apply as Delegate",
       icon: BookOpen,
       href: SITE_CONFIG.socials.registration.delegate,
