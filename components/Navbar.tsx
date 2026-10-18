@@ -84,9 +84,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
       if (target) {
         target.scrollIntoView({ behavior: "smooth" });
       }
-    } else {
-      e.preventDefault();
-      onOpenUpcoming();
     }
   };
 
@@ -162,7 +159,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
 
         {/* Right: Register Now Button */}
         <div className="hidden md:flex items-center">
-          <button
+          <Link
+            href="/#opportunities"
             onClick={handleRegisterClick}
             className={`inline-flex items-center justify-center px-5 py-2 rounded-full text-xs sm:text-sm font-bold shadow-xs active:scale-95 transition-all duration-200 whitespace-nowrap cursor-pointer ${
               isLightNavbar
@@ -171,12 +169,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
             }`}
           >
             <span>Register Now</span>
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Hamburger & Register Now Button */}
         <div className="flex items-center gap-2 md:hidden">
-          <button
+          <Link
+            href="/#opportunities"
             onClick={handleRegisterClick}
             className={`px-3.5 py-1.5 rounded-full text-xs font-bold shadow-xs whitespace-nowrap cursor-pointer ${
               isLightNavbar
@@ -185,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
             }`}
           >
             Register Now
-          </button>
+          </Link>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -221,12 +220,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
             })}
 
             <div className="pt-2">
-              <button
+              <Link
+                href="/#opportunities"
                 onClick={handleRegisterClick}
                 className="block w-full py-2.5 px-4 rounded-xl text-center text-sm font-bold bg-black text-white hover:bg-neutral-800 shadow-xs transition-colors cursor-pointer"
               >
                 Register Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>

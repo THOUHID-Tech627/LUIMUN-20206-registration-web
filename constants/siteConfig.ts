@@ -78,8 +78,8 @@ export const SITE_CONFIG = {
     email: "lumuna@lus.ac.bd",
     registration: {
       delegate: "https://luimun2026.fillout.com/t/qrbfBNdKwUus",
-      headOfDelegation: "https://luimun2026.fillout.com/t/5jDj79vVzbus",
-      internationalDelegate: "https://luimun2026.fillout.com/t/3qjU3Fhfrhus",
+      headOfDelegation: "https://luimun2026.fillout.com/t/r3GK9VqNNbus",
+      internationalDelegate: "https://luimun-2026.fillout.com/t/daQxbpTb6cus",
     },
   },
 

@@ -323,13 +323,13 @@ export default function AboutUsPage() {
 
                 {/* CTAs */}
                 <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <button
-                    onClick={handleOpenUpcoming}
+                  <Link
+                    href="/#opportunities"
                     className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm sm:text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200"
                   >
                     <span>Register for LUIMUN 2026</span>
                     <ArrowRight className="h-4 w-4" />
-                  </button>
+                  </Link>
 
                   <Link
                     href="/"
