@@ -21,6 +21,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
   useEffect(() => {
     if (pathname === "/about-us") {
       setActiveLink("About Us");
+    } else if (pathname === "/resources") {
+      setActiveLink("Resources");
+    } else if (pathname === "/gallery") {
+      setActiveLink("Gallery");
+    } else if (pathname === "/faq") {
+      setActiveLink("FAQ");
     } else if (pathname === "/") {
       setActiveLink("Home");
     }
@@ -91,6 +97,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about-us" },
     { label: "Committees", href: "/#committees" },
+    { label: "Resources", href: "/resources" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "FAQ", href: "/faq" },
   ];
 
   const isLightNavbar = isScrolled || !isHome;
@@ -98,12 +107,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
   return (
     <nav
       data-reveal="down"
-      className="fixed top-[8px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-4xl xl:max-w-5xl transition-all duration-300"
+      className="fixed top-[8px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl xl:max-w-6xl transition-all duration-300"
       aria-label="Main Navigation"
     >
       {/* Floating Pill Glassmorphism Container */}
       <div
-        className={`floating-glass-navbar ${!isLightNavbar ? "floating-glass-navbar-dark" : ""} relative flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-full transition-all duration-300 ${
+        className={`floating-glass-navbar ${!isLightNavbar ? "floating-glass-navbar-dark" : ""} relative flex items-center justify-between px-3 sm:px-5 lg:px-6 py-2 rounded-full transition-all duration-300 ${
           isLightNavbar
             ? "bg-white/45 border border-white/55 shadow-[0_16px_42px_rgba(0,0,0,0.18)]"
             : "bg-black/35 border border-white/25 shadow-[0_12px_36px_rgba(0,0,0,0.3)]"
@@ -112,25 +121,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
         {/* Left: Logo Brand (LUIMUN 2026) */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 group focus:outline-none focus:ring-2 focus:ring-neutral-400 rounded-full py-1 pr-2"
+          className="flex items-center gap-2 group focus:outline-none focus:ring-2 focus:ring-neutral-400 rounded-full py-1 pr-1.5"
         >
-          <div className="relative h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0 rounded-full overflow-hidden border border-neutral-300/60 shadow-xs bg-black flex items-center justify-center">
+          <div className="relative h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 rounded-full overflow-hidden border border-neutral-300/60 shadow-xs bg-black flex items-center justify-center">
             <Image
               src={SITE_CONFIG.assets.logo}
               alt="LUIMUN Logo"
               fill
               priority
               className="object-contain p-1 transition-transform duration-300 group-hover:scale-105"
-              sizes="(max-width: 640px) 36px, 40px"
+              sizes="(max-width: 640px) 32px, 36px"
             />
           </div>
-          <span className={`font-display font-black tracking-wider text-base sm:text-lg transition-colors whitespace-nowrap ${isLightNavbar ? "text-neutral-900 group-hover:text-black" : "text-white group-hover:text-white/80"}`}>
+          <span className={`font-display font-black tracking-wider text-sm sm:text-base lg:text-lg transition-colors whitespace-nowrap ${isLightNavbar ? "text-neutral-900 group-hover:text-black" : "text-white group-hover:text-white/80"}`}>
             LUIMUN 2026
           </span>
         </Link>
 
-        {/* Center: Desktop Navigation Links (Home, About Us, Contact Us) */}
-        <div className="hidden md:flex items-center gap-2 lg:gap-4">
+        {/* Center: Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-1 lg:gap-2.5">
           {navLinks.map((item) => {
             const isActive = activeLink === item.label;
 
@@ -139,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.label, item.href)}
-                className={`relative px-3.5 py-1.5 text-sm md:text-base font-extrabold rounded-full transition-all duration-200 ${
+                className={`relative px-2.5 lg:px-3 py-1 text-xs lg:text-sm font-extrabold rounded-full transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? `${isLightNavbar ? "text-black" : "text-white"} font-bold`
                     : isLightNavbar
@@ -149,7 +158,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
               >
                 {/* Active Link Indicator (Monochrome accent bar matching theme) */}
                 {isActive && (
-                  <span className={`absolute -top-2 left-1/2 -translate-x-1/2 w-5 h-[2.5px] rounded-full transition-all duration-200 ${isLightNavbar ? "bg-neutral-900" : "bg-white"}`} />
+                  <span className={`absolute -top-1.5 left-1/2 -translate-x-1/2 w-4 h-[2px] rounded-full transition-all duration-200 ${isLightNavbar ? "bg-neutral-900" : "bg-white"}`} />
                 )}
                 <span>{item.label}</span>
               </Link>

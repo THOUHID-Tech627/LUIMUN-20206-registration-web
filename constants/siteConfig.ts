@@ -65,9 +65,11 @@ export const SITE_CONFIG = {
 
   // Navigation Links
   navLinks: [
-    { label: "About", href: "#about" },
-    { label: "Conference", href: "#conference-info" },
-    { label: "Opportunities", href: "#opportunities" },
+    { label: "About", href: "/about-us" },
+    { label: "Committees", href: "/#committees" },
+    { label: "Resources", href: "/resources" },
+    { label: "Gallery", href: "/gallery" },
+    { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "#contact" },
   ] as NavItem[],
 

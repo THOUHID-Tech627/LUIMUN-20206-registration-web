@@ -62,18 +62,18 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
               </li>
               <li>
                 <Link
-                  href="/about-us"
-                  className="text-white/80 hover:text-white transition-colors inline-block"
-                >
-                  Theme & Vision
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/#committees"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
                   Committees
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/gallery"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
+                >
+                  Photo Gallery
                 </Link>
               </li>
             </ul>
@@ -106,14 +106,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE_CONFIG.socials.registration.internationalDelegate}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/resources"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
-                  International Delegate
-                </a>
+                  Delegate Resources
+                </Link>
               </li>
             </ul>
           </div>
@@ -125,19 +123,27 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
             </h4>
             <ul className="space-y-3.5 text-sm sm:text-base font-semibold">
               <li>
-                <button
-                  onClick={onOpenUpcoming}
-                  className="text-white/80 hover:text-white transition-colors text-left"
+                <Link
+                  href="/faq"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
                 >
-                  Sponsor/Partner
-                </button>
+                  Frequently Asked Questions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/resources"
+                  className="text-white/80 hover:text-white transition-colors inline-block"
+                >
+                  Rules of Procedure
+                </Link>
               </li>
               <li>
                 <button
                   onClick={onOpenUpcoming}
-                  className="text-white/80 hover:text-white transition-colors text-left"
+                  className="text-white/80 hover:text-white transition-colors text-left cursor-pointer"
                 >
-                  FAQ
+                  Sponsor/Partner
                 </button>
               </li>
             </ul>
