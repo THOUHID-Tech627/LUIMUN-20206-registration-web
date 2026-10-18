@@ -5,15 +5,10 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Globe2,
-  Award,
-  Scale,
-  Users,
-  Flame,
   ArrowRight,
   ShieldCheck,
   Calendar,
   MapPin,
-  Sparkles,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -30,39 +25,6 @@ export default function AboutUsPage() {
   const handleCloseUpcoming = () => {
     setIsUpcomingModalOpen(false);
   };
-
-  const missionItems = [
-    {
-      title: "Empower Youth",
-      description:
-        "Develop leadership, public speaking, research, and critical-thinking skills.",
-      icon: Award,
-    },
-    {
-      title: "Promote Diplomacy",
-      description:
-        "Encourage constructive dialogue, negotiation, and peaceful conflict resolution.",
-      icon: Scale,
-    },
-    {
-      title: "Advance Global Understanding",
-      description:
-        "Explore international affairs through diverse perspectives and multilateral cooperation.",
-      icon: Globe2,
-    },
-    {
-      title: "Build Connections",
-      description:
-        "Create opportunities for collaboration, cultural exchange, and lasting relationships.",
-      icon: Users,
-    },
-    {
-      title: "Inspire Action",
-      description:
-        "Equip young people to turn ideas into meaningful contributions beyond the conference.",
-      icon: Flame,
-    },
-  ];
 
   return (
     <div className="relative min-h-screen bg-white text-neutral-900 flex flex-col selection:bg-black selection:text-white">
@@ -139,7 +101,7 @@ export default function AboutUsPage() {
                     <div className="text-xs font-semibold text-neutral-600 mt-0.5">Empowering Youth Diplomats</div>
                   </div>
                   <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200">
-                    <div className="font-display text-2xl font-black text-neutral-900">500+</div>
+                    <div className="font-display text-2xl font-black text-neutral-900">530+</div>
                     <div className="text-xs font-semibold text-neutral-600 mt-0.5">Delegates Per Recent Edition</div>
                   </div>
                 </div>
@@ -233,59 +195,6 @@ export default function AboutUsPage() {
             </div>
           </section>
 
-          {/* Section 3: Vision & Mission */}
-          <section data-reveal="up" className="mt-16 sm:mt-24 pt-12 border-t border-neutral-200">
-            {/* Vision Banner */}
-            <div className="rounded-3xl border border-neutral-300 bg-gradient-to-br from-neutral-50 via-white to-neutral-100 p-8 sm:p-12 shadow-sm text-left">
-              <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-neutral-600">
-                <Sparkles className="h-4 w-4 text-neutral-900" />
-                <span>Our Vision</span>
-              </div>
-              <p className="mt-4 font-display text-xl sm:text-2xl lg:text-3xl font-extrabold text-neutral-950 leading-snug">
-                “To cultivate a generation of informed, empathetic, and capable
-                leaders who can navigate global complexities and contribute
-                meaningfully to a more peaceful, inclusive, and cooperative world.”
-              </p>
-            </div>
-
-            {/* Mission Section */}
-            <div className="mt-12 sm:mt-16">
-              <div className="text-left mb-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
-                  PURPOSE & OBJECTIVES
-                </span>
-                <h3 className="mt-1.5 font-display text-2xl sm:text-4xl font-extrabold text-neutral-900 tracking-tight">
-                  Our Mission
-                </h3>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-                {missionItems.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div
-                      key={item.title}
-                      data-reveal="up"
-                      data-reveal-delay={String(idx + 1)}
-                      className="flex flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-7 shadow-2xs hover:border-neutral-400 hover:shadow-xs transition-all duration-200"
-                    >
-                      <div>
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-900">
-                          <Icon className="h-5 w-5 text-neutral-900" />
-                        </div>
-                        <h4 className="mt-5 font-display text-lg font-bold text-neutral-900">
-                          {item.title}
-                        </h4>
-                        <p className="mt-2 text-sm text-neutral-700 leading-relaxed">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
 
           {/* Section 4: Our Legacy, Our Future */}
           <section data-reveal="up" className="mt-16 sm:mt-24 pt-12 border-t border-neutral-200">
@@ -300,7 +209,7 @@ export default function AboutUsPage() {
 
                 <p className="mt-6 text-sm sm:text-base text-neutral-300 leading-relaxed font-normal">
                   For the past decade, LUMUNA has brought young minds together through
-                  the spirit of diplomacy. With over 500 delegates attending each of
+                  the spirit of diplomacy. With over 530 delegates attending each of
                   our last two editions, LUIMUN continues to expand its reach and
                   strengthen its place in Bangladesh&apos;s Model United Nations circuit.
                 </p>
