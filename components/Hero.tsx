@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
@@ -23,19 +24,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0A0A0A]">
       {/* Background video and contrast overlays */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <iframe
-          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-full min-h-[56.25vw] min-w-[177.78vh] -translate-x-1/2 -translate-y-1/2 border-0"
-          src="https://player.vimeo.com/video/1236837112?background=1&autoplay=1&muted=1&loop=1&quality=1080p&autopause=0"
-          title="LUIMUN 2026"
-          allow="autoplay; fullscreen; picture-in-picture"
-          referrerPolicy="strict-origin-when-cross-origin"
-          tabIndex={-1}
-          aria-hidden="true"
+        <Image
+          src="/images/LUIMUN 2026_ Global Justice Network.png"
+          alt="LUIMUN 2026 Background"
+          fill
+          priority
+          unoptimized
+          quality={100}
+          sizes="100vw"
+          className="pointer-events-none object-cover object-center"
         />
 
         {/* Directional contrast overlay: ensures left text readability while highlighting the banner emblem */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-black/5 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/40 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/35 pointer-events-none" />
       </div>
 
       {/* Main Hero Container */}
