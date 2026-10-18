@@ -23,15 +23,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#0A0A0A]">
       {/* Background video and contrast overlays */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <iframe
-          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-full min-h-[56.25vw] min-w-[177.78vh] -translate-x-1/2 -translate-y-1/2 border-0"
-          src="https://player.vimeo.com/video/1236837112?autoplay=1&muted=1&loop=1&background=1&controls=0&title=0&byline=0&portrait=0"
-          title="LUIMUN 2026 Background Video"
-          allow="autoplay; fullscreen; picture-in-picture"
-          referrerPolicy="strict-origin-when-cross-origin"
-          tabIndex={-1}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="pointer-events-none absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover"
           aria-hidden="true"
-        />
+        >
+          <source src="/images/video/hero-background.webm" type="video/webm" />
+        </video>
 
         {/* Directional contrast overlay: ensures left text readability while highlighting the banner emblem */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-black/5 pointer-events-none" />
@@ -84,7 +85,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
           {/* Organization Attribution */}
           <div className="mt-7 flex items-center gap-2 text-xs sm:text-sm text-neutral-300">
             <ShieldCheck className="h-4 w-4 text-neutral-300 flex-shrink-0" />
-            <span>Organised by LUMUNA Secretariat</span>
+            <span>Organised by LUMUNA</span>
           </div>
         </div>
 

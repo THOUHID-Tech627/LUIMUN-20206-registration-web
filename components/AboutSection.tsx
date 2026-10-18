@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Globe2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/siteConfig";
 
 export const AboutSection: React.FC = () => {
@@ -38,11 +38,7 @@ export const AboutSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Decorative Pill Badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 sm:left-auto sm:right-2 sm:translate-x-0 rounded-full bg-black px-4 py-1.5 text-xs font-bold text-white border border-neutral-800 shadow-xs flex items-center gap-1.5">
-                <Globe2 className="h-3.5 w-3.5 text-neutral-300" />
-                <span>Premier MUN of Bangladesh</span>
-              </div>
+
             </div>
 
             {/* Quick Metrics */}
@@ -57,7 +53,7 @@ export const AboutSection: React.FC = () => {
               </div>
               <div className="text-center border-x border-neutral-200 px-2">
                 <div className="font-display text-2xl sm:text-3xl font-extrabold text-neutral-900">
-                  5+
+                  8+
                 </div>
                 <div className="text-[11px] font-bold text-neutral-500 uppercase mt-0.5">
                   Committees
@@ -65,7 +61,7 @@ export const AboutSection: React.FC = () => {
               </div>
               <div className="text-center">
                 <div className="font-display text-2xl sm:text-3xl font-extrabold text-neutral-900">
-                  300+
+                  400+
                 </div>
                 <div className="text-[11px] font-bold text-neutral-500 uppercase mt-0.5">
                   Delegates
