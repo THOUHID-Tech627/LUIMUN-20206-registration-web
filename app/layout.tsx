@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Diplomacy",
     "Youth Leadership",
   ],
-  authors: [{ name: "Leading University MUN Secretariat" }],
+  authors: [{ name: "LUMUNA" }],
   icons: {
     icon: [
       { url: "/images/logo-nobg.png", type: "image/png" },

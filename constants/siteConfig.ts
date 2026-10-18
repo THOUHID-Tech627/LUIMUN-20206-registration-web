@@ -75,7 +75,7 @@ export const SITE_CONFIG = {
   socials: {
     facebook: "https://www.facebook.com/LUMUNA.SYLHET",
     eventPage: "https://www.facebook.com/share/1D8R5dnosW/",
-    email: "da.luimun2026@gmail.com",
+    email: "lumuna@lus.ac.bd",
     registration: {
       delegate: "https://luimun2026.fillout.com/t/qrbfBNdKwUus",
       headOfDelegation: "https://luimun2026.fillout.com/t/5jDj79vVzbus",
@@ -177,7 +177,7 @@ export const SITE_CONFIG = {
         "Institutional representation & networking",
         "Exclusive delegation discounts & incentives",
         "Leadership recognition certificate & honors",
-        "Direct collaboration with the LUMUNA Secretariat",
+        "Direct collaboration with LUMUNA",
       ],
     },
     {
@@ -191,7 +191,7 @@ export const SITE_CONFIG = {
         "Chair & Co-Chair specialized committee sessions",
         "Formulate Background Guides & Rules of Procedure",
         "Honorarium & Executive Board certification",
-        "Exclusive Secretariat Gala & networking reception",
+        "Exclusive LUMUNA Gala & networking reception",
       ],
     },
   ] as OpportunityItem[],
@@ -244,7 +244,7 @@ export const SITE_CONFIG = {
       title: "Awards & Closing Gala",
       category: "Accreditation",
       description:
-        "Formal recognition of exemplary diplomacy, best position papers, distinguished delegates, and closing Secretariat addresses.",
+        "Formal recognition of exemplary diplomacy, best position papers, distinguished delegates, and closing LUMUNA addresses.",
       iconName: "Trophy",
       highlight: true,
     },

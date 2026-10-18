@@ -104,7 +104,7 @@ export default function AboutUsPage() {
             <div className="relative aspect-[16/10] sm:aspect-[21/10] w-full">
               <Image
                 src="/images/about-us-delegation.jpg"
-                alt="Leading University Model United Nations Association Delegation and Secretariat"
+                alt="Leading University Model United Nations Association (LUMUNA) Delegation"
                 fill
                 priority
                 className="object-cover object-center"

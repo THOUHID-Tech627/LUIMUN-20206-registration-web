@@ -93,25 +93,27 @@ export const CommitteesSection: React.FC<CommitteesSectionProps> = ({
             <div
               key={comm.name}
               data-reveal="up"
-              className="group relative flex flex-col items-center justify-between p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 min-h-[220px] sm:min-h-[250px]"
+              className="group relative flex flex-col items-center justify-between p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 h-full min-h-[240px] sm:min-h-[260px]"
             >
               {/* Committee Logo Box */}
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center my-auto transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src={comm.logo}
-                  alt={`${comm.name} Official Logo`}
-                  fill
-                  className="object-contain p-1"
-                  sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
-                />
+              <div className="flex-1 flex items-center justify-center w-full pb-3 sm:pb-4">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={comm.logo}
+                    alt={`${comm.name} Official Logo`}
+                    fill
+                    className="object-contain p-1"
+                    sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+                  />
+                </div>
               </div>
 
-              {/* Committee Name Below the Logo */}
-              <div className="mt-4 sm:mt-5 text-center w-full pt-3 border-t border-neutral-100">
-                <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-neutral-900 tracking-tight">
+              {/* Committee Name Below the Logo - uniform height ensures all h3 headings align in a row */}
+              <div className="w-full pt-3 sm:pt-4 border-t border-neutral-100 text-center flex flex-col items-center justify-start">
+                <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-neutral-900 tracking-tight leading-tight">
                   {comm.name}
                 </h3>
-                <p className="mt-1 text-xs sm:text-sm font-semibold text-neutral-600 leading-snug line-clamp-2">
+                <p className="mt-1 text-xs sm:text-sm font-semibold text-neutral-600 leading-snug line-clamp-2 h-9 sm:h-10 flex items-start justify-center">
                   {comm.fullName}
                 </p>
               </div>
@@ -123,26 +125,29 @@ export const CommitteesSection: React.FC<CommitteesSectionProps> = ({
             <div
               key={`surprise-${num}`}
               data-reveal="up"
-              className={`group relative flex flex-col items-center justify-between p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 min-h-[220px] sm:min-h-[250px] ${
+              className={`group relative flex flex-col items-center justify-between p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-neutral-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 h-full min-h-[240px] sm:min-h-[260px] ${
                 idx === 0 ? "md:col-start-2" : ""
               }`}
             >
               {/* Question Mark Logo Box */}
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center my-auto transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src="/images/committees/surprise.svg"
-                  alt="Surprise Committee Logo"
-                  fill
-                  className="object-contain p-1"
-                  sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
-                />
+              <div className="flex-1 flex items-center justify-center w-full pb-3 sm:pb-4">
+                <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src="/images/committees/surprise.svg"
+                    alt="Surprise Committee Logo"
+                    fill
+                    className="object-contain p-1"
+                    sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, 112px"
+                  />
+                </div>
               </div>
 
               {/* Committee Name Below the Logo */}
-              <div className="mt-4 sm:mt-5 text-center w-full pt-3 border-t border-neutral-100 flex items-center justify-center min-h-[52px]">
-                <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-neutral-900 tracking-tight">
+              <div className="w-full pt-3 sm:pt-4 border-t border-neutral-100 text-center flex flex-col items-center justify-start">
+                <h3 className="font-display font-black text-base sm:text-lg md:text-xl text-neutral-900 tracking-tight leading-tight">
                   Surprise Committee
                 </h3>
+                <div className="mt-1 h-9 sm:h-10" aria-hidden="true" />
               </div>
             </div>
           ))}

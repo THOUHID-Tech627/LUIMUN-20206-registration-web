@@ -11,87 +11,52 @@ interface TimeLeft {
   isStarted: boolean;
 }
 
-export const Countdown: React.FC = () => {
-  const [mounted, setMounted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+const calculateTime = (): TimeLeft => {
+  const targetDate = new Date(SITE_CONFIG.conferenceDateIso).getTime();
+  const now = Date.now();
+  const difference = targetDate - now;
+
+  if (isNaN(difference) || difference <= 0) {
+    return {
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+      isStarted: true,
+    };
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor(
+    (difference % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+  return {
+    days,
+    hours,
+    minutes,
+    seconds,
     isStarted: false,
-  });
+  };
+};
+
+export const Countdown: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTime);
 
   useEffect(() => {
-    setMounted(true);
-    const targetDate = new Date(SITE_CONFIG.conferenceDateIso).getTime();
+    // Run an initial calculation immediately on mount
+    setTimeLeft(calculateTime());
 
-    const calculateTime = () => {
-      const now = new Date().getTime();
-      const difference = targetDate - now;
-
-      if (isNaN(difference) || difference <= 0) {
-        setTimeLeft({
-          days: 0,
-          hours: 0,
-          minutes: 0,
-          seconds: 0,
-          isStarted: true,
-        });
-        return;
-      }
-
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor(
-        (difference % (1000 * 60 * 60)) / (1000 * 60)
-      );
-      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-      setTimeLeft({
-        days,
-        hours,
-        minutes,
-        seconds,
-        isStarted: false,
-      });
-    };
-
-    calculateTime();
-    const interval = setInterval(calculateTime, 1000);
+    const interval = setInterval(() => {
+      setTimeLeft(calculateTime());
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
-
-  if (!mounted) {
-    return (
-      <div className="w-full max-w-md flex flex-col items-start text-left">
-        <span className="text-base sm:text-lg font-bold text-white tracking-wide mb-3 text-left drop-shadow-sm">
-          {SITE_CONFIG.dateDisplay} • Sylhet, Bangladesh
-        </span>
-        <div className="flex items-center justify-start gap-1.5 sm:gap-2.5">
-          {["DAYS", "HOURS", "MINUTES", "SECONDS"].map((label, index) => (
-            <React.Fragment key={label}>
-              <div className="flex flex-col items-center justify-center rounded-xl bg-black/75 backdrop-blur-md border border-white/20 px-3 py-3 sm:px-5 sm:py-4 min-w-[72px] sm:min-w-[96px] shadow-md">
-                <span className="font-display font-extrabold text-2xl sm:text-3xl text-white tabular-nums leading-none">
-                  --
-                </span>
-                <span className="mt-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-neutral-400">
-                  {label}
-                </span>
-              </div>
-              {index < 3 && (
-                <span className="text-lg sm:text-xl font-bold text-white/30 -mt-3 select-none">
-                  :
-                </span>
-              )}
-            </React.Fragment>
-          ))}
-        </div>
-      </div>
-    );
-  }
 
   if (timeLeft.isStarted) {
     return (
@@ -124,7 +89,10 @@ export const Countdown: React.FC = () => {
           <React.Fragment key={unit.label}>
             {/* Box with frosted dark background for clear contrast over visible banner */}
             <div className="flex flex-col items-center justify-center rounded-xl bg-black/75 backdrop-blur-md border border-white/20 px-3 py-3 sm:px-5 sm:py-4 min-w-[72px] sm:min-w-[96px] shadow-md">
-              <span className="font-display font-extrabold text-2xl sm:text-3xl text-white tabular-nums leading-none">
+              <span
+                suppressHydrationWarning
+                className="font-display font-extrabold text-2xl sm:text-3xl text-white tabular-nums leading-none"
+              >
                 {String(unit.value).padStart(2, "0")}
               </span>
               <span className="mt-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-neutral-400">

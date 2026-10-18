@@ -185,7 +185,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
         {/* Bottom Row Divider & Sub-footer */}
         <div data-reveal="up" className="mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-white/75 font-medium">
           {/* Copyright notice */}
-          <p>© 2026 {SITE_CONFIG.name}. Organised by Leading University MUN Secretariat.</p>
+          <p>© 2026. Organised by Leading University Model United Nations Association.</p>
 
           {/* Social Icons */}
           <div className="flex items-center gap-6">
