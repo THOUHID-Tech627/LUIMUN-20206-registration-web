@@ -396,6 +396,9 @@ export default function AboutUsPage() {
         </div>
       </main>
 
+      {/* Institutional Footer */}
+      <Footer onOpenUpcoming={handleOpenUpcoming} />
+
       {/* Lightbox Modal */}
       {lightboxImage && (
         <div
