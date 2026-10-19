@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -30,6 +31,9 @@ export const metadata: Metadata = {
     "Youth Leadership",
   ],
   authors: [{ name: "LUMUNA" }],
+  verification: {
+    google: "udAx7g7BP10ISaN9d2hbEsyra9HfxaBULnOvcTEkUME",
+  },
   icons: {
     icon: [
       { url: "/images/logo-nobg.png", type: "image/png" },
@@ -61,6 +65,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} scroll-smooth`}>
       <body className="bg-white text-neutral-900 antialiased min-h-screen selection:bg-black selection:text-white">
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-HE12C5DWJV"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HE12C5DWJV');
+          `}
+        </Script>
         {children}
       </body>
     </html>
