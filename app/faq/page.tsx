@@ -40,7 +40,7 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "Registration & Eligibility",
     question: "Who is eligible to participate in LUIMUN 2026?",
     answer:
-      "LUIMUN 2026 is open to high school, college, and university students (undergraduate and postgraduate) worldwide. We welcome both individual delegates and institutional delegations, as well as delegates from previous MUN circuits and first-time participants.",
+      "LUIMUN 2026 is open to high school, college, and university students (undergraduate and postgraduate) worldwide. We welcome both individual delegates and institutional delegations, as well as delegates from various MUN clubs around Bangladesh and first-time participants.",
   },
   {
     id: "how-to-register",

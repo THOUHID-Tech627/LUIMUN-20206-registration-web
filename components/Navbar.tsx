@@ -23,8 +23,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
       setActiveLink("About Us");
     } else if (pathname === "/resources") {
       setActiveLink("Resources");
-    } else if (pathname === "/gallery") {
-      setActiveLink("Gallery");
     } else if (pathname === "/faq") {
       setActiveLink("FAQ");
     } else if (pathname === "/") {
@@ -98,7 +96,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenUpcoming }) => {
     { label: "About Us", href: "/about-us" },
     { label: "Committees", href: "/#committees" },
     { label: "Resources", href: "/resources" },
-    { label: "Gallery", href: "/gallery" },
     { label: "FAQ", href: "/faq" },
   ];
 

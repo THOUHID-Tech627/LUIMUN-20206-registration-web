@@ -70,10 +70,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenUpcoming }) => {
               </li>
               <li>
                 <Link
-                  href="/gallery"
+                  href="/about-us"
                   className="text-white/80 hover:text-white transition-colors inline-block"
                 >
-                  Photo Gallery
+                  Decade Archive
                 </Link>
               </li>
             </ul>
