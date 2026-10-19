@@ -259,7 +259,7 @@ export default function FAQPage() {
           </div>
 
           {/* FAQ Accordion List */}
-          <div className="mt-10 space-y-4">
+          <div data-reveal="up" className="mt-10 space-y-4">
             {filteredFAQs.length === 0 ? (
               <div className="p-12 text-center rounded-2xl bg-neutral-50 border border-neutral-200">
                 <HelpCircle className="h-10 w-10 text-neutral-400 mx-auto mb-3" />
@@ -285,7 +285,6 @@ export default function FAQPage() {
                 return (
                   <div
                     key={faq.id}
-                    data-reveal="up"
                     className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
                       isOpen
                         ? "bg-white border-neutral-900 shadow-md ring-1 ring-neutral-900/10"

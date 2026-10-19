@@ -9,7 +9,6 @@ import {
   X,
   Maximize2,
   Calendar,
-  MapPin,
   Users,
   Award,
   Sparkles,
@@ -23,190 +22,13 @@ import { Footer } from "@/components/Footer";
 import { UpcomingModal } from "@/components/UpcomingModal";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { SITE_CONFIG } from "@/constants/siteConfig";
-
-interface EditionMilestone {
-  year: string;
-  editionName: string;
-  tagline: string;
-  location: string;
-  description: string;
-  photos: {
-    src: string;
-    caption: string;
-  }[];
-}
-
-const CONFERENCE_EDITIONS: EditionMilestone[] = [
-  {
-    year: "2025",
-    editionName: "LUIMUN 2025 (4th International MUN)",
-    tagline: "532 Delegates • Bay of Bengal Concert • Kushiara Convention Hall",
-    location: "Leading University & Kushiara Convention Hall, Sylhet",
-    description:
-      "A landmark international edition welcoming 532 delegates and 50 Executive Board members. Began with an Opening Plenary hosted at the residence of Dr. Syed Ragib Ali featuring a concert by 'Bay of Bengal', rigorous committee negotiations on campus, and an illustrious Gala & Award Giving ceremony at Kushiara Convention Hall.",
-    photos: [
-      {
-        src: "/images/gallery/2025-2.jpg",
-        caption: "Opening Plenary and committee debate sessions at Leading University campus.",
-      },
-      {
-        src: "/images/gallery/2025-1.jpg",
-        caption: "Grand Gala Award Giving and Closing Plenary at Kushiara International Convention Hall.",
-      },
-    ],
-  },
-  {
-    year: "2024",
-    editionName: "LUIMUN 2024 (3rd International MUN)",
-    tagline: "Engaging the Global Diplomatic Community",
-    location: "Leading University Campus, Sylhet",
-    description:
-      "Recognised as one of the hallmark Model UN conferences in Bangladesh, engaging international delegates, policy analysts, and youth changemakers in high-stakes negotiations and multilateral compromise.",
-    photos: [
-      {
-        src: "/images/gallery/2024-2.jpg",
-        caption: "General Speakers List and committee deliberations in plenary session.",
-      },
-      {
-        src: "/images/gallery/2024-1.jpg",
-        caption: "Executive Board and delegation leaders during resolution voting.",
-      },
-    ],
-  },
-  {
-    year: "2023",
-    editionName: "LUIMUN 2023 (2nd International MUN)",
-    tagline: "Where Diplomacy Meets Ambition (Sept 7–9, 2023)",
-    location: "Leading University Campus, Sylhet",
-    description:
-      "A premier international gathering held from September 7 to 9, 2023, establishing LUMUNA as the cornerstone of youth diplomacy in the Sylhet region and nationwide.",
-    photos: [
-      {
-        src: "/images/gallery/2023-2.jpg",
-        caption: "Committee caucus and cross-regional bloc consultations.",
-      },
-      {
-        src: "/images/gallery/2023-1.jpg",
-        caption: "Delegation awards, plenary addresses, and closing protocol.",
-      },
-    ],
-  },
-  {
-    year: "2022",
-    editionName: "LUIMUN 2022 (1st International MUN)",
-    tagline: "The International Frontier",
-    location: "Leading University Campus, Sylhet",
-    description:
-      "LUMUNA successfully transitioned from national summits to the international arena with its first-ever international conference, fostering cross-cultural understanding and global leadership.",
-    photos: [
-      {
-        src: "/images/gallery/2022-2.jpg",
-        caption: "Inaugural international delegate registration and assembly.",
-      },
-      {
-        src: "/images/gallery/2022-1.jpg",
-        caption: "Cross-cultural plenary diplomacy and multilateral engagement.",
-      },
-    ],
-  },
-  {
-    year: "2020",
-    editionName: "LUMUN 2020",
-    tagline: "Flagship National Assembly (Feb 6–8, 2020)",
-    location: "Leading University Campus, Sylhet",
-    description:
-      "A landmark event in Bangladesh's extracurricular landscape conducted over three dynamic days, facilitating collaborative problem-solving and diplomatic excellence before the pandemic.",
-    photos: [
-      {
-        src: "/images/gallery/2020-2.jpg",
-        caption: "Opening plenary proceedings and parliamentary protocol.",
-      },
-      {
-        src: "/images/gallery/2020-1.jpg",
-        caption: "Intense unmoderated caucus and working paper drafting sessions.",
-      },
-    ],
-  },
-  {
-    year: "2019",
-    editionName: "LUMUN 2019",
-    tagline: "3rd National MUN Conference in Sylhet",
-    location: "Leading University Campus, Sylhet",
-    description:
-      "Successfully arranged as the largest Model UN summit in the northeastern region, solidifying LUMUNA's academic reputation for debate rigor.",
-    photos: [
-      {
-        src: "/images/gallery/2019-2.jpg",
-        caption: "Committee sessions and delegate debates in progress.",
-      },
-      {
-        src: "/images/gallery/2019-1.jpg",
-        caption: "Delegation leaders and Executive Board members during awards ceremony.",
-      },
-    ],
-  },
-  {
-    year: "2018",
-    editionName: "LUMUN 2018",
-    tagline: "2nd National Conference (Feb 8–11, 2018)",
-    location: "Leading University Campus, Sylhet",
-    description:
-      "Following the success of the inaugural national edition, LUMUN 2018 expanded into a 4-day convention, setting the regional record for delegate participation.",
-    photos: [
-      {
-        src: "/images/gallery/2018-2.jpg",
-        caption: "Plenary assembly and diplomatic address to delegates.",
-      },
-      {
-        src: "/images/gallery/2018-1.jpg",
-        caption: "Committee floor proceedings and resolution presentations.",
-      },
-    ],
-  },
-  {
-    year: "2017",
-    editionName: "LUMUN 2017",
-    tagline: "Inaugural National Conference at Permanent Campus",
-    location: "Ragib Nagar, Kamal Bazar, Sylhet",
-    description:
-      "LUMUNA's first-ever national Model UN conference held in its permanent campus at Ragib Nagar, marking a new era of diplomatic tradition.",
-    photos: [
-      {
-        src: "/images/gallery/2017-2.jpg",
-        caption: "Inauguration at the permanent campus in Ragib Nagar, Kamal Bazar.",
-      },
-      {
-        src: "/images/gallery/2017-1.jpg",
-        caption: "Historic delegate assembly and first national committee gavels.",
-      },
-    ],
-  },
-  {
-    year: "2016",
-    editionName: "Intra-MUN 2016",
-    tagline: "The Genesis: LUMUNA's First MUN",
-    location: "Leading University, Sylhet",
-    description:
-      "LUMUNA organized its first Intra-MUN in 2016. This founding event marked the official beginning of structured debate, parliamentary procedure, and diplomacy initiatives within Leading University.",
-    photos: [
-      {
-        src: "/images/gallery/2016-2.jpg",
-        caption: "The inaugural Intra-MUN delegation and founding organizers in 2016.",
-      },
-      {
-        src: "/images/gallery/2016-1.jpg",
-        caption: "The first committee gavel and parliamentary debate session at Leading University.",
-      },
-    ],
-  },
-];
+import { CONFERENCE_EDITIONS, EditionMilestone } from "@/constants/conferenceEditions";
 
 export default function GalleryPage() {
   const [selectedYear, setSelectedYear] = useState<string>("all");
   const [lightboxImage, setLightboxImage] = useState<{
     src: string;
     title: string;
-    caption: string;
     year: string;
   } | null>(null);
   const [isUpcomingModalOpen, setIsUpcomingModalOpen] = useState(false);
@@ -306,10 +128,6 @@ export default function GalleryPage() {
                       <span className="font-display font-black text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-neutral-900 text-white">
                         {edition.year}
                       </span>
-                      <span className="text-xs font-semibold text-neutral-500 flex items-center gap-1">
-                        <MapPin className="h-3 w-3" />
-                        {edition.location}
-                      </span>
                     </div>
                     <h2 className="font-display font-black text-2xl sm:text-3xl text-neutral-900">
                       {edition.editionName}
@@ -327,38 +145,35 @@ export default function GalleryPage() {
 
                 {/* Photo Gallery Grid for this Edition */}
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  {edition.photos.map((photo, pIdx) => (
+                  {edition.photos.map((photoSrc, pIdx) => (
                     <div
                       key={pIdx}
                       onClick={() =>
                         setLightboxImage({
-                          src: photo.src,
+                          src: photoSrc,
                           title: edition.editionName,
-                          caption: photo.caption,
                           year: edition.year,
                         })
                       }
-                      className="group relative rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer h-72 sm:h-80 flex flex-col justify-end"
+                      className="group relative aspect-[4/3] sm:aspect-[16/10] w-full rounded-2xl overflow-hidden bg-neutral-900 border border-neutral-200 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
                     >
                       <Image
-                        src={photo.src}
-                        alt={photo.caption}
+                        src={photoSrc}
+                        alt={`${edition.editionName} - Photo ${pIdx + 1}`}
                         fill
+                        unoptimized
+                        loading={edition.year === "2025" && pIdx < 2 ? "eager" : "lazy"}
+                        priority={edition.year === "2025" && pIdx < 2}
+                        decoding="async"
                         className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                         sizes="(max-width: 640px) 100vw, 50vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 pointer-events-none" />
 
-                      <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <div className="h-8 w-8 rounded-full bg-black/60 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
+                      <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                        <div className="h-8 w-8 rounded-full bg-black/70 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-md">
                           <Maximize2 className="h-4 w-4" />
                         </div>
-                      </div>
-
-                      <div className="relative z-10 p-5 text-white">
-                        <p className="text-xs sm:text-sm text-neutral-200 font-medium line-clamp-2 leading-relaxed">
-                          {photo.caption}
-                        </p>
                       </div>
                     </div>
                   ))}
@@ -370,11 +185,11 @@ export default function GalleryPage() {
           {/* Lightbox Modal */}
           {lightboxImage && (
             <div
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4 animate-in fade-in duration-200"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-in fade-in duration-200"
               onClick={() => setLightboxImage(null)}
             >
               <div
-                className="relative max-w-4xl w-full bg-neutral-900 border border-neutral-700 rounded-3xl overflow-hidden shadow-2xl text-white"
+                className="relative max-w-5xl w-full bg-neutral-900 border border-neutral-800 rounded-3xl overflow-hidden shadow-2xl text-white"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
@@ -387,31 +202,28 @@ export default function GalleryPage() {
                 </button>
 
                 {/* Image Display */}
-                <div className="relative w-full h-[55vh] sm:h-[65vh] bg-black">
+                <div className="relative w-full h-[60vh] sm:h-[72vh] bg-black flex items-center justify-center">
                   <Image
                     src={lightboxImage.src}
                     alt={lightboxImage.title}
                     fill
+                    unoptimized
+                    priority
                     className="object-contain"
                     sizes="100vw"
                   />
                 </div>
 
                 {/* Metadata Footer */}
-                <div className="p-6 bg-neutral-900 border-t border-neutral-800">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-neutral-200 border border-white/20">
+                <div className="p-5 sm:p-6 bg-neutral-900 border-t border-neutral-800 flex items-center justify-between gap-4">
+                  <div>
+                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-neutral-200 border border-white/20 mb-1.5">
                       {lightboxImage.year} Edition
                     </span>
+                    <h3 className="font-display font-black text-lg sm:text-2xl text-white">
+                      {lightboxImage.title}
+                    </h3>
                   </div>
-
-                  <h3 className="font-display font-black text-xl sm:text-2xl text-white">
-                    {lightboxImage.title}
-                  </h3>
-
-                  <p className="mt-2 text-sm text-neutral-300 leading-relaxed font-normal">
-                    {lightboxImage.caption}
-                  </p>
                 </div>
               </div>
             </div>

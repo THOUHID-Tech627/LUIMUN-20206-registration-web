@@ -180,11 +180,10 @@ export default function ResourcesPage() {
           </div>
 
           {/* Committee Study Guides Grid */}
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div data-reveal="up" className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredGuides.map((comm) => (
               <div
                 key={comm.code}
-                data-reveal="up"
                 className={`relative flex flex-col justify-between p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border transition-all duration-300 hover:shadow-lg hover:-translate-y-1 ${
                   comm.isSurprise
                     ? "border-neutral-300 bg-neutral-50/50"

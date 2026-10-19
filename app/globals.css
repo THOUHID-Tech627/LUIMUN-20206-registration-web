@@ -275,7 +275,8 @@ body {
   translate: 0 -24px;
 }
 
-.scroll-reveal-enabled [data-reveal].is-revealed {
+.scroll-reveal-enabled [data-reveal].is-revealed,
+.scroll-reveal-enabled [data-reveal][data-revealed="true"] {
   opacity: 1;
   translate: 0 0;
 }
