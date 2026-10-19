@@ -79,30 +79,30 @@ export const Countdown: React.FC = () => {
   return (
     <div className="w-full max-w-md flex flex-col items-start text-left">
       {/* Top: Date in White Bold matching background */}
-      <span className="text-base sm:text-lg font-bold text-white tracking-wide mb-3 text-left drop-shadow-sm">
+      <span className="text-xs sm:text-sm md:text-base font-bold text-white tracking-wide mb-2 sm:mb-2.5 text-left drop-shadow-sm">
         {SITE_CONFIG.dateDisplay} • Sylhet, Bangladesh
       </span>
 
       {/* Middle: 4 Countdown Boxes with colons */}
-      <div className="flex items-center justify-start gap-1.5 sm:gap-2.5">
+      <div className="flex items-center justify-start gap-1.5 sm:gap-2">
         {units.map((unit, index) => (
           <React.Fragment key={unit.label}>
             {/* Box with frosted dark background for clear contrast over visible banner */}
-            <div className="flex flex-col items-center justify-center rounded-xl bg-black/75 backdrop-blur-md border border-white/20 px-3 py-3 sm:px-5 sm:py-4 min-w-[72px] sm:min-w-[96px] shadow-md">
+            <div className="flex flex-col items-center justify-center rounded-xl bg-black/75 backdrop-blur-md border border-white/20 px-2.5 py-2 sm:px-3.5 sm:py-2.5 md:px-4 md:py-3 min-w-[60px] sm:min-w-[74px] md:min-w-[82px] shadow-md">
               <span
                 suppressHydrationWarning
-                className="font-display font-extrabold text-2xl sm:text-3xl text-white tabular-nums leading-none"
+                className="font-display font-extrabold text-xl sm:text-2xl md:text-3xl text-white tabular-nums leading-none"
               >
                 {String(unit.value).padStart(2, "0")}
               </span>
-              <span className="mt-1.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-neutral-400">
+              <span className="mt-1 text-[8px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-neutral-400">
                 {unit.label}
               </span>
             </div>
 
             {/* Colon divider between boxes */}
             {index < units.length - 1 && (
-              <span className="text-lg sm:text-xl font-bold text-white/30 -mt-3 select-none">
+              <span className="text-sm sm:text-base md:text-lg font-bold text-white/30 -mt-2 select-none">
                 :
               </span>
             )}
