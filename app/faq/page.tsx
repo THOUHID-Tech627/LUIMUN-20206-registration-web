@@ -6,17 +6,8 @@ import {
   HelpCircle,
   Search,
   ChevronDown,
-  Sparkles,
   ArrowRight,
   Mail,
-  ShieldCheck,
-  Globe2,
-  Calendar,
-  MapPin,
-  FileText,
-  Users,
-  Award,
-  CheckCircle2,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -29,18 +20,21 @@ interface FAQItem {
   category: "registration" | "academics" | "logistics" | "international";
   categoryLabel: string;
   question: string;
-  answer: string;
+  answer: React.ReactNode;
+  searchableAnswer: string;
 }
 
 const FAQ_DATA: FAQItem[] = [
-  // Registration & Eligibility
+  // 1. Registration & Eligibility
   {
     id: "eligibility",
     category: "registration",
     categoryLabel: "Registration & Eligibility",
     question: "Who is eligible to participate in LUIMUN 2026?",
     answer:
-      "LUIMUN 2026 is open to high school, college, and university students (undergraduate and postgraduate) worldwide. We welcome both individual delegates and institutional delegations, as well as delegates from various MUN clubs around Bangladesh and first-time participants.",
+      "LUIMUN 2026 welcomes eligible students interested in diplomacy, international relations, global affairs, and Model United Nations. Please refer to the official registration guidelines for specific eligibility requirements.",
+    searchableAnswer:
+      "LUIMUN 2026 welcomes eligible students interested in diplomacy, international relations, global affairs, and Model United Nations. Please refer to the official registration guidelines for specific eligibility requirements.",
   },
   {
     id: "how-to-register",
@@ -48,23 +42,9 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "Registration & Eligibility",
     question: "How do I register, and what registration tracks are available?",
     answer:
-      "Registration is completed online through our official forms. You can register as an Individual Delegate, Head of Delegation (representing an institutional delegation of multiple students), or an International Delegate requiring special visa and accommodation assistance.",
-  },
-  {
-    id: "registration-fee",
-    category: "registration",
-    categoryLabel: "Registration & Eligibility",
-    question: "What does the delegate registration package include?",
-    answer:
-      "The registration fee covers complete access to all 4 conference days, personalized delegate kit (official placard, folder, notepad, pen, lapel pin), committee sessions, lunches and high tea snacks across all conference days, admission to the Cultural Night, the Grand Diplomatic Gala & Concert, and an official Certificate of Participation.",
-  },
-  {
-    id: "allocation-policy",
-    category: "registration",
-    categoryLabel: "Registration & Eligibility",
-    question: "How and when are country and committee matrix allocations made?",
-    answer:
-      "Country and committee allocations are assigned on a rolling basis by the Secretariat upon verification of your registration form and past MUN experience. Early registrants have a higher likelihood of securing their top 3 country preferences.",
+      "Delegates must complete the official registration form available through the LUIMUN 2026 website. Please review the available registration options, provide accurate information, and follow the instructions provided during registration.",
+    searchableAnswer:
+      "Delegates must complete the official registration form available through the LUIMUN 2026 website. Please review the available registration options, provide accurate information, and follow the instructions provided during registration.",
   },
   {
     id: "independent-delegate",
@@ -72,25 +52,41 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "Registration & Eligibility",
     question: "Can I participate independently without a delegation or school club?",
     answer:
-      "Absolutely. A substantial portion of our delegates participate as independent delegates. You do not need an official university club or advisor endorsement to apply and compete for awards.",
+      "Yes. Delegates may register independently without being affiliated with a school club or institutional delegation, subject to the official registration requirements.",
+    searchableAnswer:
+      "Yes. Delegates may register independently without being affiliated with a school club or institutional delegation, subject to the official registration requirements.",
+  },
+  {
+    id: "registration-package",
+    category: "registration",
+    categoryLabel: "Registration & Eligibility",
+    question: "What does the delegate registration package include?",
+    answer:
+      "The registration package includes access to all four conference days, a personalized delegate kit featuring an official placard, folder, notepad, pen, lapel pin, and other official conference materials. It also includes access to committee sessions, lunches and high-tea snacks throughout the conference, admission to the Cultural Night, the Gala Dinner, and an official Certificate of Participation.",
+    searchableAnswer:
+      "The registration package includes access to all four conference days, a personalized delegate kit featuring an official placard, folder, notepad, pen, lapel pin, and other official conference materials. It also includes access to committee sessions, lunches and high-tea snacks throughout the conference, admission to the Cultural Night, the Gala Dinner, and an official Certificate of Participation.",
+  },
+  {
+    id: "allocation-policy",
+    category: "registration",
+    categoryLabel: "Registration & Eligibility",
+    question: "How and when are country and committee matrix allocations made?",
+    answer:
+      "Country and committee allocations are assigned by the Delegate Affairs Team in accordance with the conference's assignment procedures and availability.",
+    searchableAnswer:
+      "Country and committee allocations are assigned by the Delegate Affairs Team in accordance with the conference's assignment procedures and availability.",
   },
 
-  // Academics & Committees
-  {
-    id: "rop-rules",
-    category: "academics",
-    categoryLabel: "Committees & Academics",
-    question: "What Rules of Procedure (RoP) does LUMUNA follow?",
-    answer:
-      "LUIMUN 2026 adheres to the standardized UNA-USA Rules of Procedure, featuring a General Speakers List (GSL), Moderated Caucuses, and Unmoderated Caucuses. The International Court of Justice (ICJ) and International Press (IP) follow specialized procedural charters detailed in the Resources section.",
-  },
+  // 2. Committees & Academics
   {
     id: "study-guides-release",
     category: "academics",
     categoryLabel: "Committees & Academics",
     question: "When will the substantive Committee Study Guides be available?",
     answer:
-      "Comprehensive background study guides authored by the Executive Board for all 8 standard committees and the 2 surprise committees will be published and downloadable directly from our Resources page several weeks prior to the conference.",
+      "Comprehensive background study guides for all eight standard committees and two surprise committees will be prepared by the Executive Board and made available for download directly from our Resources page.",
+    searchableAnswer:
+      "Comprehensive background study guides for all eight standard committees and two surprise committees will be prepared by the Executive Board and made available for download directly from our Resources page.",
   },
   {
     id: "position-papers",
@@ -98,7 +94,9 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "Committees & Academics",
     question: "Are Position Papers mandatory, and how are they submitted?",
     answer:
-      "Submission of a formal Position Paper (maximum 2 pages per committee) is mandatory for delegates who wish to be considered for conference awards (Best Delegate, Outstanding Delegate, and Best Position Paper). Position papers must be submitted through the delegate portal before the designated deadline.",
+      "Position Papers are mandatory for delegates seeking consideration for conference awards, subject to the guidelines and requirements established by each committee's Executive Board. Papers must be submitted through the delegate portal within the designated deadline and must not exceed two pages per committee.",
+    searchableAnswer:
+      "Position Papers are mandatory for delegates seeking consideration for conference awards, subject to the guidelines and requirements established by each committee's Executive Board. Papers must be submitted through the delegate portal within the designated deadline and must not exceed two pages per committee.",
   },
   {
     id: "first-time-delegates",
@@ -106,25 +104,92 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "Committees & Academics",
     question: "Is LUIMUN suitable for first-time or novice delegates?",
     answer:
-      "Yes! We take pride in mentoring newcomers. LUMUNA provides delegate preparation toolkits, RoP cheat sheets, and beginner-friendly committee environments. Our Executive Board chairs are dedicated to guiding delegates through parliamentary rules and speechmaking.",
+      "Yes! LUIMUN 2026 welcomes both experienced and first-time delegates. Delegate manuals, Rules of Procedure (RoP) guides, and committee study guides will help participants understand parliamentary procedures, prepare for debates, and engage confidently in committee sessions.",
+    searchableAnswer:
+      "Yes! LUIMUN 2026 welcomes both experienced and first-time delegates. Delegate manuals, Rules of Procedure (RoP) guides, and committee study guides will help participants understand parliamentary procedures, prepare for debates, and engage confidently in committee sessions.",
   },
   {
     id: "conference-awards",
     category: "academics",
     categoryLabel: "Committees & Academics",
     question: "What awards and recognitions are presented at LUIMUN 2026?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          LUIMUN 2026 recognizes outstanding diplomatic performance through several awards.
+        </p>
+        <ul className="list-disc pl-5 space-y-1.5 text-neutral-700">
+          <li>
+            <strong className="font-bold text-neutral-900">Best Delegate:</strong> Crest and certificate.
+          </li>
+          <li>
+            <strong className="font-bold text-neutral-900">Outstanding Delegate:</strong> Crest.
+          </li>
+          <li>
+            <strong className="font-bold text-neutral-900">Special Mention:</strong> Certificate.
+          </li>
+          <li>
+            <strong className="font-bold text-neutral-900">Best Delegation Award:</strong> Recognizes the institution demonstrating the highest overall diplomatic excellence.
+          </li>
+          <li>
+            <strong className="font-bold text-neutral-900">Biggest Delegation Award:</strong> Recognizes the institution participating with the largest number of delegates.
+          </li>
+        </ul>
+        <p className="pt-1">
+          The Best Delegation Award recognizes overall delegation performance, while the Biggest Delegation Award recognizes delegation size.
+        </p>
+      </div>
+    ),
+    searchableAnswer:
+      "LUIMUN 2026 recognizes outstanding diplomatic performance through several awards. Best Delegate: Crest and certificate. Outstanding Delegate: Crest. Special Mention: Certificate. Best Delegation Award: Recognizes the institution demonstrating the highest overall diplomatic excellence. Biggest Delegation Award: Recognizes the institution participating with the largest number of delegates. The Best Delegation Award recognizes overall delegation performance, while the Biggest Delegation Award recognizes delegation size.",
+  },
+  {
+    id: "rop-rules",
+    category: "academics",
+    categoryLabel: "Committees & Academics",
+    question: "What Rules of Procedure (RoP) does LUMUNA follow?",
     answer:
-      "Each simulation committee awards Best Delegate (Gavel & Certificate), Outstanding Delegate, Special Mention, and Best Position Paper. In addition, the Best Delegation Award is conferred during the Closing Gala to the institution demonstrating the highest aggregate diplomatic excellence.",
+      "Delegates are expected to follow the Rules of Procedure established for their respective committees. Committee-specific procedural guidelines and instructions will be communicated by the Executive Board.",
+    searchableAnswer:
+      "Delegates are expected to follow the Rules of Procedure established for their respective committees. Committee-specific procedural guidelines and instructions will be communicated by the Executive Board.",
   },
 
-  // Logistics & Sylhet
+  // 3. Logistics & Sylhet
   {
     id: "venue-location",
     category: "logistics",
     categoryLabel: "Logistics & Sylhet",
     question: "Where is the conference held, and how do I get to the venue?",
-    answer:
-      "The primary sessions are hosted at the permanent campus of Leading University located at Kamal Bazar, Sylhet 3112, Bangladesh. Sylhet is easily accessible via direct domestic and international flights to Osmani International Airport (ZYL), as well as intercity trains and luxury coach services from Dhaka and Chittagong.",
+    answer: (
+      <div className="space-y-2.5">
+        <p>
+          LUIMUN 2026 will be hosted at the permanent campus of Leading University, located in Kamal Bazar, Sylhet 3112, Bangladesh.
+        </p>
+        <p>
+          Sylhet is accessible through Osmani International Airport (ZYL), intercity trains, and coach services from major cities. Transportation within Sylhet city will be provided between delegate accommodations and designated conference locations, as arranged by the organizers.
+        </p>
+      </div>
+    ),
+    searchableAnswer:
+      "LUIMUN 2026 will be hosted at the permanent campus of Leading University, located in Kamal Bazar, Sylhet 3112, Bangladesh. Sylhet is accessible through Osmani International Airport (ZYL), intercity trains, and coach services from major cities. Transportation within Sylhet city will be provided between delegate accommodations and designated conference locations, as arranged by the organizers.",
+  },
+  {
+    id: "dress-code",
+    category: "logistics",
+    categoryLabel: "Logistics & Sylhet",
+    question: "What is the official dress code for the conference?",
+    answer: (
+      <div className="space-y-2.5">
+        <p>
+          Delegates are expected to wear Western Business Formal attire, including suits, blazers, formal shirts, and ties, or appropriate formal national diplomatic attire during committee sessions and plenary meetings from Day 1 through Day 4.
+        </p>
+        <p>
+          On Friday, delegates are expected to wear traditional attire. Dress code details for the Cultural Night will be announced separately once its schedule is confirmed.
+        </p>
+      </div>
+    ),
+    searchableAnswer:
+      "Delegates are expected to wear Western Business Formal attire, including suits, blazers, formal shirts, and ties, or appropriate formal national diplomatic attire during committee sessions and plenary meetings from Day 1 through Day 4. On Friday, delegates are expected to wear traditional attire. Dress code details for the Cultural Night will be announced separately once its schedule is confirmed.",
   },
   {
     id: "accommodation",
@@ -132,25 +197,21 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "Logistics & Sylhet",
     question: "Is accommodation provided for outstation delegates?",
     answer:
-      "LUMUNA partners with vetted hotels and guest houses in Sylhet to offer subsidized group rates for delegates traveling from outside Sylhet. Information regarding partner hotel packages and shuttle transport to the campus will be shared with confirmed delegates.",
-  },
-  {
-    id: "dress-code",
-    category: "logistics",
-    categoryLabel: "Logistics & Sylhet",
-    question: "What is the official dress code for the conference?",
-    answer:
-      "For Day 1 through Day 4 committee sessions and plenary meetings, the dress code is strictly Western Business Formal (suits, blazers, formal shirts, ties, and modest business attire) or formal national diplomatic attire. For the Cultural Night, delegates are encouraged to wear vibrant traditional and cultural dress representing their heritage.",
+      "Accommodation arrangements and relevant information for outstation delegates will be communicated through the official conference channels. Delegates should consult the organizers for confirmed accommodation options, availability, and applicable costs.",
+    searchableAnswer:
+      "Accommodation arrangements and relevant information for outstation delegates will be communicated through the official conference channels. Delegates should consult the organizers for confirmed accommodation options, availability, and applicable costs.",
   },
 
-  // International Delegates
+  // 4. International Delegates
   {
     id: "visa-support",
     category: "international",
     categoryLabel: "International Delegates",
     question: "Can LUMUNA provide an official Visa Invitation Letter for international travel?",
     answer:
-      "Yes. Once an international delegate completes registration and payment verification, our International Relations Directorate issues an official, stamped Visa Support & Invitation Letter and coordinates with diplomatic missions where applicable.",
+      "Yes. Upon completion of registration and verification of payment, the Organizing Committee will issue an official Visa Support and Invitation Letter to international delegates who require documentation for their visa applications.",
+    searchableAnswer:
+      "Yes. Upon completion of registration and verification of payment, the Organizing Committee will issue an official Visa Support and Invitation Letter to international delegates who require documentation for their visa applications.",
   },
   {
     id: "international-support",
@@ -158,7 +219,9 @@ const FAQ_DATA: FAQItem[] = [
     categoryLabel: "International Delegates",
     question: "What dedicated support is available for international delegations?",
     answer:
-      "International delegates receive dedicated liaison officers who assist with airport pickup at Osmani International Airport (ZYL), local SIM cards, currency exchange guidance, hotel check-in, and curated heritage tours around the scenic tea gardens and lakes of Sylhet.",
+      "LUMUNA aims to facilitate international delegates' participation through relevant registration guidance and conference-related assistance. International delegations should contact the organizing team for information about visa documentation, travel coordination, accommodation arrangements, and other logistical requirements.",
+    searchableAnswer:
+      "LUMUNA aims to facilitate international delegates' participation through relevant registration guidance and conference-related assistance. International delegations should contact the organizing team for information about visa documentation, travel coordination, accommodation arrangements, and other logistical requirements.",
   },
 ];
 
@@ -183,11 +246,9 @@ export default function FAQPage() {
   const filteredFAQs = FAQ_DATA.filter((item) => {
     const matchesCategory =
       activeCategory === "all" || item.category === activeCategory;
-    const matchesSearch =
-      item.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.answer.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    const searchTarget =
+      `${item.question} ${item.categoryLabel} ${item.searchableAnswer}`.toLowerCase();
+    return matchesCategory && searchTarget.includes(searchQuery.toLowerCase());
   });
 
   return (
@@ -226,8 +287,8 @@ export default function FAQPage() {
             <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
               {[
                 { id: "all", label: "All Questions" },
-                { id: "registration", label: "Registration & Fees" },
-                { id: "academics", label: "Committees & RoP" },
+                { id: "registration", label: "Registration & Eligibility" },
+                { id: "academics", label: "Committees & Academics" },
                 { id: "logistics", label: "Logistics & Sylhet" },
                 { id: "international", label: "International Delegates" },
               ].map((tab) => (
@@ -267,7 +328,7 @@ export default function FAQPage() {
                   No matching questions found
                 </h3>
                 <p className="text-sm text-neutral-600 mt-1 max-w-sm mx-auto">
-                  Try searching for another keyword or reach out directly to our Secretariat.
+                  Try searching for another keyword or reach out directly to our organizing team.
                 </p>
                 <button
                   onClick={() => {
@@ -334,13 +395,13 @@ export default function FAQPage() {
             <div className="space-y-3 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-neutral-300">
                 <Mail className="h-3.5 w-3.5" />
-                <span>Secretariat Help Desk</span>
+                <span>Delegate Help Desk</span>
               </div>
               <h3 className="font-display text-2xl sm:text-3xl font-black">
                 Still Have Unanswered Questions?
               </h3>
               <p className="text-neutral-400 text-sm sm:text-base max-w-xl font-normal">
-                Our Delegate Affairs and Secretariat Directorate is on standby to assist you with registration,
+                Our Delegate Affairs and Organizing Team is on standby to assist you with registration,
                 institutional quotas, and travel inquiries.
               </p>
             </div>
@@ -379,4 +440,3 @@ export default function FAQPage() {
     </div>
   );
 }
-
