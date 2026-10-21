@@ -401,7 +401,7 @@ export default function FAQPage() {
                 Still Have Unanswered Questions?
               </h3>
               <p className="text-neutral-400 text-sm sm:text-base max-w-xl font-normal">
-                Our Delegate Affairs and Organizing Team is on standby to assist you with registration,
+                Our Delegate Affairs Team is ready to assist you with registration,
                 institutional quotas, and travel inquiries.
               </p>
             </div>
