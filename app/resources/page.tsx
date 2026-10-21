@@ -280,8 +280,8 @@ export default function ResourcesPage() {
       <UpcomingModal
         isOpen={isUpcomingModalOpen}
         onClose={handleCloseUpcoming}
-        title={downloadModalDoc ? `Download: ${downloadModalDoc}` : "Upcoming…"}
-        subtitle="This committee study guide will be officially released for registered delegates soon. Please check back shortly."
+        title={downloadModalDoc ? `Download: ${downloadModalDoc}` : "Become a Partner"}
+        subtitle={downloadModalDoc ? "This committee study guide will be officially released for registered delegates soon. Please check back shortly." : "Become a partner of a great diplomatic conference."}
       />
     </div>
   );

@@ -13,8 +13,8 @@ interface UpcomingModalProps {
 export const UpcomingModal: React.FC<UpcomingModalProps> = ({
   isOpen,
   onClose,
-  title = "Upcoming…",
-  subtitle = "This feature will be available soon.",
+  title = "Become a Partner",
+  subtitle = "Become a partner of a great diplomatic conference.",
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -104,7 +104,7 @@ export const UpcomingModal: React.FC<UpcomingModalProps> = ({
           {/* Diplomatic Note */}
           <div className="mt-6 flex items-center justify-center gap-2 rounded-full bg-neutral-100 px-4 py-1.5 text-xs text-neutral-800 font-semibold border border-neutral-200">
             <Globe className="h-3.5 w-3.5 text-neutral-600" />
-            <span>LUMUNA 2026</span>
+            <span>LUIMUN 2026</span>
           </div>
 
           {/* Action Button: Black with white text */}

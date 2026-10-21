@@ -434,8 +434,8 @@ export default function FAQPage() {
       <UpcomingModal
         isOpen={isUpcomingModalOpen}
         onClose={handleCloseUpcoming}
-        title="Upcoming…"
-        subtitle="This feature will be available soon."
+        title="Become a Partner"
+        subtitle="Become a partner of a great diplomatic conference."
       />
     </div>
   );
