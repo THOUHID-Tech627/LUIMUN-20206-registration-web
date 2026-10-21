@@ -103,7 +103,7 @@ export default function AboutUsPage() {
           {/* Section 1: About LUMUNA */}
           <section data-reveal="up" className="mt-16 sm:mt-24 pt-12 border-t border-neutral-200">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-              <div className="lg:col-span-4">
+              <div className="lg:col-span-4 lg:sticky lg:top-28">
                 <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
                   ESTABLISHED 2016
                 </span>
@@ -122,24 +122,46 @@ export default function AboutUsPage() {
                 </div>
               </div>
 
-              <div className="lg:col-span-8 space-y-5 text-base sm:text-lg text-neutral-800 leading-relaxed font-normal">
-                <p>
-                  Founded in 2016, the{" "}
-                  <strong className="font-bold text-neutral-950">
-                    Leading University Model United Nations Association (LUMUNA)
-                  </strong>{" "}
-                  has spent a decade fostering youth diplomacy, critical thinking,
-                  and leadership in Northeast Bangladesh. Through debate, negotiation,
-                  and multilateral engagement, LUMUNA has created a platform where
-                  young minds challenge perspectives, develop solutions, and prepare
-                  to shape the world around them.
-                </p>
-                <p>
-                  Rooted in Sylhet, our journey has been defined by ideas exchanged,
-                  resolutions negotiated, and connections built beyond committee
-                  rooms. What began as a vision has grown into a lasting legacy of
-                  empowering young leaders.
-                </p>
+              <div className="lg:col-span-8 space-y-8 text-base sm:text-lg text-neutral-800 leading-relaxed font-normal">
+                {/* Where It All Began */}
+                <div className="space-y-2.5">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-neutral-950 tracking-tight">
+                    Where It All Began
+                  </h3>
+                  <p>
+                    In 2016, a small group of students at Leading University set out to build something the Northeast had not yet seen: a space where young minds could practice diplomacy, not just study it. That first step, the Leading University Intra Model United Nations Conference 2016, became the seed from which everything LUMUNA stands for today has grown.
+                  </p>
+                </div>
+
+                {/* A Region Finds Its Voice */}
+                <div className="space-y-2.5 pt-6 sm:pt-8 border-t border-neutral-200">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-neutral-950 tracking-tight">
+                    A Region Finds Its Voice
+                  </h3>
+                  <p>
+                    A year later, in 2017, that seed became a movement. LUMUNA hosted Sylhet’s first-ever national Model United Nations conference, giving the region a seat at a table it had never occupied before. Rooted in the pioneering spirit of the Northeast, LUMUNA has spent the years since turning policy simulation and cross-cultural dialogue into a lasting culture, one built on accountability, practical leadership, and the belief that where you’re from should never limit how far your ideas can travel.
+                  </p>
+                </div>
+
+                {/* The Values That Carry Us Forward */}
+                <div className="space-y-2.5 pt-6 sm:pt-8 border-t border-neutral-200">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-neutral-950 tracking-tight">
+                    The Values That Carry Us Forward
+                  </h3>
+                  <p>
+                    LUMUNA was never just about conferences. It is about the leaders those conferences quietly shape, students who learn to argue with discipline, listen with intent, and act with accountability. That growth hasn’t stayed within our own walls: LUMUNA members have gone on to bring home awards from conferences across the country, and many now sit as Executive Board members leading committee rooms of their own. From a world in transition to the choices that will shape it, LUMUNA trains its members to meet real challenges with ethical judgment and global awareness, because the skills that matter most in a committee room are the same ones that matter everywhere else.
+                  </p>
+                </div>
+
+                {/* LUIMUN: Ten Years, Five Editions, Our Biggest Leap Yet */}
+                <div className="space-y-2.5 pt-6 sm:pt-8 border-t border-neutral-200">
+                  <h3 className="font-display text-xl sm:text-2xl font-bold text-neutral-950 tracking-tight">
+                    LUIMUN: Ten Years, Five Editions, Our Biggest Leap Yet
+                  </h3>
+                  <p>
+                    This December, LUIMUN returns for its 5th international edition, marking ten full years since LUMUNA first opened its doors. For this edition of LUIMUN, the conference will run across four full days, a milestone that lets us go deeper into debate, negotiation, and committee work than ever before. LUIMUN 2026 is shaping up to be one of the most academically rigorous conferences LUMUNA has ever hosted, and every delegate who walks through our doors this year is in for an experience unlike any LUIMUN before it.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -147,7 +169,7 @@ export default function AboutUsPage() {
           {/* Section 2: About LUIMUN 2026 */}
           <section data-reveal="up" className="mt-16 sm:mt-24 pt-12 border-t border-neutral-200">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-              <div className="lg:col-span-4">
+              <div className="lg:col-span-4 lg:sticky lg:top-28">
                 <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
                   FLAGSHIP CONFERENCE
                 </span>
