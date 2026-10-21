@@ -77,7 +77,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenUpcoming }) => {
                 }}
                 className="group inline-flex items-center justify-center gap-2 rounded-full px-8 sm:px-10 py-3 sm:py-3.5 md:py-4 text-sm sm:text-base font-bold bg-white text-black hover:bg-neutral-200 border border-white shadow-xs transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-400 cursor-pointer"
               >
-                <span>Apply Now</span>
+                <span>Register Now</span>
                 <ArrowRight className="h-4 w-4 text-black transition-transform group-hover:translate-x-1" />
               </a>
 
